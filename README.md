@@ -1,10 +1,7 @@
 # Learn business automation 
-Access the labs at:
+Access the labs at: https://kie-learning.github.io/guides/
 
 ---
-pip3 install mkdocs-enumerate-headings-plugin
-enumerate-headings ->
-
 ## Contributing to this project
 
 The training labs are based on mkdocs.
