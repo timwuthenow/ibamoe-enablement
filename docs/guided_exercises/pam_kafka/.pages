@@ -1,0 +1,8 @@
+nav:
+    - Working with event driven processes in RHPAM:
+        - Introduction: introduction.md
+        - Environment Setup: env-setup.md
+        - Setup - Starting Processes with Events: lab-one-setup.md
+        - Starting Processes with Events: start-event.md
+        - Emitting Events in Processes: emitting-events.md
+        - Auditing through events: auditing-events.md

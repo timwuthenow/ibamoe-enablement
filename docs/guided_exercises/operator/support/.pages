@@ -1,0 +1,9 @@
+nav:
+- Deploying PAM on OpenShift using Operators:
+    - Using the Business Automation Operator: operator-ocp4.md
+    - Deploying a trial environment: trial-environment.md
+    - Versions and the Operator: version-upgrade.md
+    - Automatic reconciliation: reconciliation.md
+    - Kie App Configuration: configuration.md
+    - ConfigMaps and Deleteting Projects: configmaps-deleteapp.md
+    - Operator Wizard: installer.md

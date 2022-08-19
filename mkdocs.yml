@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: "Learning Business Automation"
+site_description: "A set of demos and guided-exercises about business automation with KIE projects"
+site_author: "Karina Varela"
+repo_url: https://github.com/kie-learning/kie-guides
+edit_uri: ""
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: en
+  - awesome-pages: #https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+      collapse_single_pages: true
+  - enumerate-headings: # https://github.com/timvink/mkdocs-enumerate-headings-plugin
+      toc_depth: 0
+      strict: true
+      increment_across_pages: true
+      exclude:
+        - index.md
+        - more.md
+        - README.md
+  - git-revision-date-localized:
+      type: iso_date
+
+extra:
+  generator: false
+
+theme:
+  name: material
+  navigation_depth: 2
+  locale: en
+  generator: false
+  icon:
+    repo: fontawesome/brands/github-alt
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+        primary: light-blue
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+
+  features:
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
+    - toc.follow
+    - navigation.top
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - abbr
+  - pymdownx.snippets
+  - meta
+  - def_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
