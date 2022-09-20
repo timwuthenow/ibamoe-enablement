@@ -13,7 +13,7 @@ In this setup we will:
 
 2. Convert the two _End Events_ to _End Message Events_. It should look like this:
 
-  ![](../images/business_automation/pam_kafka/bc-process-definition-step2.png){:width="600px"}
+  ![](../images/business_automation/bam_kafka/bc-process-definition-step2.png){:width="600px"}
 
 2. Next, configure the Kafka topic name in the message name for both nodes as following:
 
@@ -22,7 +22,7 @@ In this setup we will:
 
 		See below one of the nodes, the _Raise Denied_ node configuration:
 
-	  	![](../images/business_automation/pam_kafka/bc-end-event-config.png){:width="600px"}
+	  	![](../images/business_automation/bam_kafka/bc-end-event-config.png){:width="600px"}
 
 3. 	Save the process definition.
 
@@ -30,7 +30,7 @@ In this setup we will:
 
 1. In business central, navigate to the **Project Settings -> Deployments -> Work Item handlers**: 
 
- 	 ![](../images/business_automation/pam_kafka/bc-project-task-config.png){:width="600px"}
+ 	 ![](../images/business_automation/bam_kafka/bc-project-task-config.png){:width="600px"}
 
 Observe that there is a task configured named `Send Task`. In PAM 7.10 you need this configuration to be able to use any `Message Events` (ending and throwing) that would emit events. 
 
@@ -45,7 +45,7 @@ In order to validate if our process is emitting processes as we expect, we need 
 	$ cd ~/enablement/amq-examples/strimzi-all-in-one/
 	```
 
-2. Start the Kafka command line tool that allows us to consume events that happen in a topic, and therefore, will allow us to know if RHPAM published the events when the process ended. The tool is `kafka-console-consumer.sh`. Let's check if the process emitted events on the topic `requests-approved`.
+2. Start the Kafka command line tool that allows us to consume events that happen in a topic, and therefore, will allow us to know if {{ product.short }} published the events when the process ended. The tool is `kafka-console-consumer.sh`. Let's check if the process emitted events on the topic `requests-approved`.
 
 	```
 	$ docker-compose exec kafka bin/kafka-console-consumer.sh --topic requests-approved --from-beginning --bootstrap-server localhost:9092
@@ -77,10 +77,10 @@ To test the solution, we will start a new process instance that will start, be a
 
 4. On the left column, filter by "Completed" State. You should see as many instances as the number of events you published on Kafka. 
 
-	![](../images/business_automation/pam_kafka/bc-process-instance-list-filtered.png){:width="600px"}
+	![](../images/business_automation/bam_kafka/bc-process-instance-list-filtered.png){:width="600px"}
 
 5. Identify your process instance ID. In this example, instance with id **5**. Select the process instance. 
 
 6. Next, select the tab `Diagram`. You should see something like: 
 
-	![](../../images/business_automation/pam_kafka/bc-lab-two-process-instances.png.png){:width="600px"}
+	![](../../images/business_automation/bam_kafka/bc-lab-two-process-instances.png.png){:width="600px"}

@@ -1,4 +1,4 @@
-# Deploying an RHPAM Trial Environment
+# Deploying an {{ product.short }} Trial Environment
 
 1.  From the **Business Automation** page in your OpenShift Console, open the **KieApp** tab and click on **Create KieApp**. 
 
@@ -27,9 +27,9 @@
 9.  Open **Networking → Routes** menu to see all the available routes to our KIE application deployed in this namespace. 
 	![](../images/business_automation/operator/ocp-routes.png){:width="650px"}
 
-10. Identify the **Business/Decision Central URL** link to navigate to the RHPAM Business Central workbench. It should be named `rhpam-trial-rhpamcentr-http` for the http option, or `rhpam-trial-rhpamcentr` for https. 
+10. Identify the **Business/Decision Central URL** link to navigate to the {{ product.short }} Business Central workbench. It should be named `rhpam-trial-rhpamcentr-http` for the http option, or `rhpam-trial-rhpamcentr` for https. 
 
-11. As the Operator is responsible for deployment and configuration of the RHPAM environment, we can find the details if this deployment in the **KieApp** instance details screen. Open your KieApp in **Operators → Installed Operators → Business Automation  → KieApp  → rhpam-trial**, and click on the **YAML** tab. 
+11. As the Operator is responsible for deployment and configuration of the {{ product.short }} environment, we can find the details if this deployment in the **KieApp** instance details screen. Open your KieApp in **Operators → Installed Operators → Business Automation  → KieApp  → rhpam-trial**, and click on the **YAML** tab. 
 	![](../../images/business_automation/operator/operator-lab-rhpam-trial-kie-app-yaml.png){:width="650px"}
 
 12. We can see in the YAML description that the **adminPassword** has been set to `RedHat`. Navigate back to the **Business Central** workbench and login with u: `adminUser` p: `RedHat`.

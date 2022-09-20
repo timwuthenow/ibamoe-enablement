@@ -1,12 +1,12 @@
 # Introduction
 
-This is a series of guided exercises that will allow you to experiment the authoring tools in VSCode and deployment in RHPAM engine, KIE Server.
+This is a series of guided exercises that will allow you to experiment the authoring tools in VSCode and deployment in {{ product.short }} engine, KIE Server.
 
 ## Tooling Set
 
 In Red Hat PAM and DM you can author decisions using:
 
-- Business Central (in RHPAM) or Decision Central (in RHDM)
+- Business Central (in {{ product.short }}) or Decision Central (in RHDM)
   - A more business friendly UI;
 - [Business Automation VSCode Extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-extension-red-hat-business-automation-bundle)
   - A developer IDE ([Visual Studio Code](https://code.visualstudio.com/)) extension that allows the visualization and editing of BPMN, DMN and Test Scenarios inside VSCode.

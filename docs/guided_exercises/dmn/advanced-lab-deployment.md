@@ -75,7 +75,7 @@ Next, we will evaluate our model with some input data. We need to provide our mo
 
 ### Using the KIE-Server Client
 
-Red Hat Decision Manager provides a KIE-Server Client API that allows the user to interact with the KIE-Server from a Java client using a higher level API. It abstracts the data marshalling and unmarshalling and the creation and execution of the RESTful commands from the developer, allowing him/her to focus on developing business logic.
+IBM {{ product.dm }} provides a KIE-Server Client API that allows the user to interact with the KIE-Server from a Java client using a higher level API. It abstracts the data marshalling and unmarshalling and the creation and execution of the RESTful commands from the developer, allowing him/her to focus on developing business logic.
 
 In this section we will create a simple Java client for our DMN model.
 

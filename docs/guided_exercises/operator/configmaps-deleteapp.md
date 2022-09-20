@@ -1,6 +1,6 @@
 # ConfigMaps
 
-The Operator stores its configuration in a number of *ConfigurationMaps*. These ConfigurationMaps can be used to change more advanced configurations that can not be configured in the KieApp YAML. In the case the Operator upgrades the version of your RHPAM environment, the Operator is aware that one of the ConfigMaps has changed and will make a backup of it during the upgrade.
+The Operator stores its configuration in a number of *ConfigurationMaps*. These ConfigurationMaps can be used to change more advanced configurations that can not be configured in the KieApp YAML. In the case the Operator upgrades the version of your {{ product.short }} environment, the Operator is aware that one of the ConfigMaps has changed and will make a backup of it during the upgrade.
 
 1.  In the OpenShift Console, open **Workloads → Config Maps**. ![](../images/business_automation/operator/operator-lab-config-maps.png){:width="650px"}
 
@@ -26,11 +26,11 @@ The Operator stores its configuration in a number of *ConfigurationMaps*. These 
 
 #  Deleting an application
 
-Apart from provisioning an RHPAM application, the Operator also allows us to easily delete an application.
+Apart from provisioning an {{ product.short }} application, the Operator also allows us to easily delete an application.
 
 1.  Navigate to **Operators → Installed Operators → Business Automation → KieApp**.
 
 2.  Click on the kebab icon of the `rhpam-trial` KieApp and click **Delete**. ![](../images/business_automation/operator/operator-lab-rhpam-trial-delete-kie-app.png){:width="650px"}
 
-3.  Navigate back to **Workloads → Deployment Configs** and note that the RHPAM Deployment Configs have been removed. ![](../images/business_automation/operator/operator-lab-rhpam-trial-dc-deleted.png){:width="650px"}
+3.  Navigate back to **Workloads → Deployment Configs** and note that the {{ product.short }} Deployment Configs have been removed. ![](../images/business_automation/operator/operator-lab-rhpam-trial-dc-deleted.png){:width="650px"}
 

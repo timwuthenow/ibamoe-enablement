@@ -1,10 +1,10 @@
-# Getting started with RHPAM
+# Getting started with {{ product.short }}
 
-This guide shows you the experience of using Red Hat Process Automation Manager to author, deploy, and execute your business automation applications. With three steps, this guide will get you from installation to deployment and testing of a business application:
+This guide shows you the experience of using {{ product.name }} to author, deploy, and execute your business automation applications. With three steps, this guide will get you from installation to deployment and testing of a business application:
 
 ![](../../images/business_automation/order_management/01_try/3-steps.png)
 
-We will install RHPAM locally, and it will run on top of Red Hat JBoss EAP (a.k.a. WildFly). Once we have it up and running, we will import an existing application, so that we have an overview of some capabilities by exploring the tool and the project itself. Finally, we'll wrap up by deploying the project and testing it. 
+We will install {{ product.short }} locally, and it will run on top of Red Hat JBoss EAP (a.k.a. WildFly). Once we have it up and running, we will import an existing application, so that we have an overview of some capabilities by exploring the tool and the project itself. Finally, we'll wrap up by deploying the project and testing it. 
 
 ## Set up 
 
@@ -14,11 +14,11 @@ We expect you to have installed in your machine:
 
 * Java JDK 11 ( if you don't have it yet, you can download OpenJDK built by Red Hat https://developers.redhat.com/openjdk-install )
 * GIT client (https://git-scm.com/) 
-* *Red Hat Process Automation Manager 7 Installation Demo*:
+* *{{ product.name }} Installation Demo*:
   **NOTE**: You should use this installer to quickly install EAP, PAM and pre-configure the environment and user access you'll need.  
-  `$ git clone https://github.com/jbossdemocentral/rhpam7-install-demo.git`
+  `$ git clone https://github.com/timwuthenow/ibamoe-docker.git`
 
-You should now have successfully installed Red Hat Process Automation Manager.
+You should now have successfully installed {{ product.name }}.
 
 You have two key components deployed in your Red Hat EAP right now: **Business Central** and **KIE Server**. 
 
@@ -26,7 +26,7 @@ You have two key components deployed in your Red Hat EAP right now: **Business C
 
 **KIE Server** is a lightweight engine capable of executing business assets like processes, cases and decisions. It can be easily integrated with your services, for example via REST or JMS.
 
-Luckily, Red Hat Process Automation Manager comes with a number of out-of-the-box template and example applications that can be used to quickly build and deploy a process microservice.
+Luckily, {{ product.name }} comes with a number of out-of-the-box template and example applications that can be used to quickly build and deploy a process microservice.
 
 ## Explore
 
@@ -34,8 +34,8 @@ Let's start by accessing Business Central.
 
 1. In your browser, access Business Central by navigating to http://localhost:8080/business-central 
 2. Log in with the credentials:
-   1. User: **pamAdmin**
-   2. Password: **redhatdm1!**
+   1. User: **bamAdmin**
+   2. Password: **ibmpam1!**
 
 3. Click on "Design, create and modify projects and pages" 
 
@@ -133,7 +133,7 @@ What about finishing this process by your own? Following the same idea, In Busin
 
 # Conclusion
 
-Congratulations, you successfully concluded a Hello World in Red Hat Process Automation Manager. 
+Congratulations, you successfully concluded a Hello World in {{ product.name }}. 
 
 In this guide, we installed Red Hat PAM, imported a project directly from GitHub, checked out the a process definition modeled and an automation decision. 
 

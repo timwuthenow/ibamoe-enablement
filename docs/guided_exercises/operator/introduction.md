@@ -1,6 +1,6 @@
 # Red Hat PAM Operator on OpenShift 4
 
-In this lab we will use the enhanced Business Automation Operator **7.10+** to deploy a number of Red Hat Process Automation Manager environments on OpenShift **4.**
+In this lab we will use the enhanced Business Automation Operator **7.10+** to deploy a number of {{ product.name }} environments on OpenShift **4.**
 
 ## Goal
 
@@ -12,13 +12,13 @@ In this lab we will use the enhanced Business Automation Operator **7.10+** to d
 
 # Problem Statement
 
-In this lab, the goal is to provision and manage various Red Hat Process Automation Manager architectures using the Business Automation Operator on OpenShift 4.
+In this lab, the goal is to provision and manage various {{ product.name }} architectures using the Business Automation Operator on OpenShift 4.
 
--   We deploy an RHPAM Trial environment, which is a basic ephemeral environment that does not require any form of storage (e.g. persistent volume, database).
+-   We deploy an {{ product.short }} Trial environment, which is a basic ephemeral environment that does not require any form of storage (e.g. persistent volume, database).
 -   We explore Operator reconciliation features by removing provisioned resources like Services and Deployment Configs.
 -   We alter the deployment through the Operator to show how the provisioned environment changes.
 -   We change a KIE configuration parameter in the Business Automation Operator ConfigMap to demonstrate advanced configuration changes.
--   We provision a more sophisticated Production environment, to show creation of PVCs, deployment of databases and integration with RHPAM Smart Router.
+-   We provision a more sophisticated Production environment, to show creation of PVCs, deployment of databases and integration with {{ product.short }} Smart Router.
 -   We use the Operator Installer console to install a new KIE-App deployment.
 
 ## First steps

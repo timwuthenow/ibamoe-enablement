@@ -1,0 +1,7 @@
+nav:
+    - Working with event driven processes in IBAMOE:
+        - Introduction: 00_introduction.md
+        - Setup - Starting Processes with Events: 01_lab-one-setup.md
+        - Starting Processes with Events: 02_start-event.md
+        - Emitting Events in Processes: 03_emitting-events.md
+        - Auditing through events: 04_auditing-events.md

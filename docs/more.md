@@ -20,7 +20,7 @@ Check out all the great guides available at: [https://redhat-scholars.github.io/
 
 ## Guides
 
-There are several guided exercises and workshops that are not yet part of this guide. You can find them below:
+There are several guided exercises and workshops that are not yet part of this guide. You can find them below:	
 
 **Loan Approval Workshop with DMN**
 : This workshop is aimed at providing hands on experience creating DMN assets. This lab will implement a Loan Approval workflow. [Check out this guide here](https://github.com/KIE-Learning/loan-approval-workshop-dmn/blob/master/Loan_Provision.adoc).
@@ -32,7 +32,7 @@ There are several guided exercises and workshops that are not yet part of this g
 : This is a step-by-step guided exercise for a first experience with OptaPlanner running with Quarkus. It brings explanation of concepts along with the actual implementation and deployment of a 
 new project. [Check out this guide here](https://github.com/KIE-Learning/knapsack-optaplanner-quarkus).
 
-**KIE Learning: RHPAM and RHDM**
+**KIE Learning: {{ product.short }} and RHDM**
 : [This repository](https://github.com/KIE-Learning/rhpam-rhdm-labs) is a set of explanation and hands-on labs which you can try on your environment and follow at your own pace.
 	The step-by-step guides covers different topics, since basics to more advanced and specific features. The content is not sequencial and it covers Decision Manager, Business Optimizer, Process Automation Manager and Kogito. 
 
@@ -40,12 +40,12 @@ new project. [Check out this guide here](https://github.com/KIE-Learning/knapsac
 		Notice that this guide brings updated versions of some of the guides listed below.
 
 	* Setup
-		* [00: Installing RHDM and RHPAM](00-environment-setup.md) => *Pre requisite for most of the hands-on labs.*
+		* [00: Installing RHDM and {{ product.short }}](00-environment-setup.md) => *Pre requisite for most of the hands-on labs.*
         * [00: OpenShift Setup](00-openshift-setup.md) => *Pre requisite for hands-on labs that uses OpenShift.*
 	* Optaplanner (included in both rhdm and rhpam)
 		* 11: [Shadow Variables](11_OptaPlanner_ShadowVariables/11_optaplanner_shadow_variables.md)
 		* 21: [Conference Scheduling](21_OptaPlanner_Conference_Scheduling/21_optaplanner_conference_scheduling.md)
-	* Red Hat Decision Manager (RHDM):
+	* IBM {{ product.dm }} (RHDM):
 		* 01: [The Value of Decision Management](/01-assets-navigation-lab/01-assets-navigation-lab.md)
 		* 02: Introduction to Decision Central and Decision Server
 			* [Creating a project](02-intro-decision-central-and-decision-server/02-1-create_project_Lab.md)
@@ -57,7 +57,7 @@ new project. [Check out this guide here](https://github.com/KIE-Learning/knapsac
 		* 12: [Decisions and AI: Combining DMN with PMML Lab](12_DMN_PMML/12_DMN_PMML_Lab.md)
 		* 13: [Prometheus: Monitoring DMN decisions with KIE-Server and Prometheus](13_DMN_Prometheus/13_DMN_Prometheus.md)
 		* 20: [Test Scenarios](20_Test_Scenario/20_Test_Scenario_Lab.md)
-	* Red Hat Process Automation Manager (RHPAM):
+	*{{ product.name }} ({{ product.short }}):
 		* 10: [Create Order Management Application](10-order-management-sample/10-create-order-management-app.md)
 		* 14: [Recommendation Engine](14-recommendation-engine/14-recommendation-engine-lab.md)
 		* 15: [Operator on OCP4](15_Operators_OCP4/15_Operators_OCP4.md)

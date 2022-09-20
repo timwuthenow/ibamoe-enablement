@@ -8,7 +8,7 @@ This is a group of three guided exercises about Decision Model and Notation - DM
 
 Prerequisite
 
-* RHPAM or RHDM 7.5+
+* {{ product.short }} or RHDM 7.5+
 
 The output of the guides can be found at: https://github.com/kmacedovarela/dmn-workshop-labs 
 

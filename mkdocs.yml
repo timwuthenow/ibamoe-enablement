@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
-site_name: "Learning Business Automation"
+site_name: "Learning IBM Business Automation Open Edition"
 site_description: "A set of demos and guided-exercises about business automation with KIE projects"
-site_author: "Karina Varela"
-repo_url: https://github.com/kie-learning/kie-guides
+site_author: "Tim Wuthenow"
+repo_url: https://github.com/timwuthenow/kogito-guides
 edit_uri: ""
 extra_css:
   - stylesheets/extra.css
@@ -11,6 +11,7 @@ extra_css:
 plugins:
   - search:
       lang: en
+  - markdownextradata
   - awesome-pages: #https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
       collapse_single_pages: true
   - enumerate-headings: # https://github.com/timvink/mkdocs-enumerate-headings-plugin
@@ -25,6 +26,10 @@ plugins:
       type: iso_date
 
 extra:
+  product: 
+    name: "IBM Business Automation Open Edition"
+    short: "IBAMOE"
+    dm: "Decision Manager"
   generator: false
 
 theme:

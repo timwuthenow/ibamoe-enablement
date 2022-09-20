@@ -1,6 +1,6 @@
 # Auditing with Kafka
 
-When using the Kafka extension in Red Hat Process Automation Manager, every transaction for processes, cases and tasks execution can be tracked via events. For each of these categories, we'll have an event emitted to a Kafka topic, in other words, we'll have three topics here: `jbpm-processes-events`, `jbpm-tasks-events`, `jbpm-cases-events`.
+When using the Kafka extension in {{ product.name }}, every transaction for processes, cases and tasks execution can be tracked via events. For each of these categories, we'll have an event emitted to a Kafka topic, in other words, we'll have three topics here: `jbpm-processes-events`, `jbpm-tasks-events`, `jbpm-cases-events`.
 
 To enable this feature, you need to add the `jbpm-event-emitters-kafka` library to the engine, KIE Server. This can either be downloaded in the [community repository for jBPM](https://search.maven.org/artifact/org.jbpm/jbpm-event-emitters-kafka/) or via the Red Hat customer portal: [rhpam-7.10.0-maven-repository.zip](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=rhpam&version=7.10.0). 
 
@@ -36,7 +36,7 @@ In this example we will check the behavior for our event driven business applica
 
 2. You should be able to see a new process instance can be seen in Business Central in the following status:
 
-	![](../images/business_automation/pam_kafka/active-human-task-process.png){:width="600px"}
+	![](../images/business_automation/bam_kafka/active-human-task-process.png){:width="600px"}
 
 3. You can use the kafka consumer CLI script to check the messages that were emitted on the topics: `jbpm-processes-events` and `jbpm-tasks-events`. 
  
@@ -53,7 +53,7 @@ In this example we will check the behavior for our event driven business applica
 
 4. Using Business Central, tnteract with the human task `Analyst Validation`, and check the events emitted on the `jbpm-tasks-events`.
 
-	![](../images/business_automation/pam_kafka/bc-task-inbox.png){:width="600px"} 
+	![](../images/business_automation/bam_kafka/bc-task-inbox.png){:width="600px"} 
 
 You should be able to see at every task change, a new event in the `jbpm-tasks-events`. Also, for every transaction commited for the process, you should see new events on the `jbpm-process-events`.
 

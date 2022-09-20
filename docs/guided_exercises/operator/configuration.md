@@ -1,6 +1,6 @@
 # KIE App Configuration
 
-The definition of the expected state of KIE-App environment is defined in the YAML definition the KIE-App. In this section we will slightly change this configuration to see how the Operator applies changes in the configuration of your Red Hat Process Automation Manager environment.
+The definition of the expected state of KIE-App environment is defined in the YAML definition the KIE-App. In this section we will slightly change this configuration to see how the Operator applies changes in the configuration of your {{ product.name }} environment.
 
 ## Changing Credentials
 

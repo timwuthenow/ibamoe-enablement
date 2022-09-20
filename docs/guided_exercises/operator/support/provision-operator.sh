@@ -6,7 +6,7 @@ echo "Creating projects."
 for i in $(seq $START $END); do
    echo "Setting up environment for user$i."
    PROJECT_NAME="rhpam710-operator-lab-user$i"
-   oc new-project $PROJECT_NAME --display-name="RHPAM 7.10 Operators Lab - User$i" --description="RHPAM 7.10 Operators Lab for User$i."
+   oc new-project $PROJECT_NAME --display-name="{{ product.short }} 7.10 Operators Lab - User$i" --description="{{ product.short }} 7.10 Operators Lab for User$i."
    oc annotate namespace $PROJECT_NAME openshift.io/requester=user$i --overwrite
    oc policy add-role-to-user admin user$i -n $PROJECT_NAME
 

@@ -1,11 +1,10 @@
 # Order Management Process
 
-This is a Process Management lab in which will implement an Order Management process. The process will use BPMN2 constructs like **Swimlanes**, **User Tasks**, **Gateways**, combined with decision-based routing based on a **DMN Model** (Decision Model & Notation). It also introduces more dynamic concepts of the Red Hat Process Automation Manager process engine, like dynamic assignments of tasks based on process instance data.
+This is a Process Management lab in which will implement an Order Management process. The process will use BPMN2 constructs like **Swimlanes**, **User Tasks**, **Gateways**, combined with decision-based routing based on a **DMN Model** (Decision Model & Notation). It also introduces more dynamic concepts of the {{ product.name }} process engine, like dynamic assignments of tasks based on process instance data.
 
 ## Goals
 
--   Create an Order Management project in Red Hat Process Automation
-    Manager.
+-   Create an Order Management project in {{ product.name }}
 -   Define and create the process' domain model using the platform’s
     Data Modeller.
 -   Implement an order management process in the process designer
@@ -681,7 +680,7 @@ Correcting problems and errors
 ==============================
 
 During process instance execution, a lot of things can go wrong. Users might fill in incorrect data, remote services are not available, etc. In an ideal world, the process definition takes a lot of these possible problems into account in its design. E.g. the process definition might contain exception handling logic via boundary catching error events and retry-loops. However, there are situations in which an operator or
-administrator would like to manually change the process to another statem for example, restart an already completed **User Task**. In the latest version of Red Hat Process Automation Manager this is now possible via the **Process Instance interface** in Business Central.
+administrator would like to manually change the process to another statem for example, restart an already completed **User Task**. In the latest version of {{ product.name }} this is now possible via the **Process Instance interface** in Business Central.
 
 1.  Start a new process instance of our **Order Management** process.
 
@@ -806,7 +805,7 @@ The rest of the tasks can be completed in the same way via the API.
 Using the KIE-Server Client
 ===========================
 
-Red Hat Process Automation Manager provides a KIE-Server Client API that allows the user to interact with  the KIE-Server from a Java client using a higher level API. It abstracts the data marshalling and unmarshalling and the creation and execution of the RESTful commands from the developer, allowing him/her to focus on developing business logic.
+{{ product.name }} provides a KIE-Server Client API that allows the user to interact with  the KIE-Server from a Java client using a higher level API. It abstracts the data marshalling and unmarshalling and the creation and execution of the RESTful commands from the developer, allowing him/her to focus on developing business logic.
 
 In this section we will create a simple Java client for our Order Management process.
 
