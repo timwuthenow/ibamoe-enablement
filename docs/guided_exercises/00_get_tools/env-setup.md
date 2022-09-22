@@ -104,9 +104,11 @@ The easiest way to acquire Maven is to use **homebrew** and run the command `bre
 
 ## Kafka
 
+The Kafka setup requires `docker-compose` to run locally, to get this capability, you can use either Docker or Podman for this capability. To see which is right for you, [read this article](https://www.redhat.com/sysadmin/podman-compose-docker-compose). Coming later in 2022 will be the labs shifted to using an OpenShift deployment of AMQ Streams to minimize the local installations required.
+
 Event-driven processes can react to the events that happens in the ecosystem. Kafka is an open-source even streaming platform, and currently, one of the most popular tools. In this type of architecture, we have the Kafka `topics` used as the communication layer in between the services. Each service can now be considered a `consumer`or a `producer`, in other words, each service can publish or consume events to/from the `topics`.  
 
-Red Hat supports the integration between {{ product.short }} and AMQ Streams (Kafka). To follow the labs, you should have an accessible Kafka server. The KIE Server (process engine) will communicate with the topics that we will create in the Kafka server. 
+IBM supports the integration between {{ product.short }} and AMQ Streams (Kafka). To follow the labs, you should have an accessible Kafka server. The KIE Server (process engine) will communicate with the topics that we will create in the Kafka server. 
 
 If you don't have an environment available you can get a Kafka (Strimzi) server quickly running by using Docker. Let's clone the project to the enablement folder. 
 
@@ -160,4 +162,4 @@ $ docker-compose exec kafka bin/kafka-topics.sh --create --bootstrap-server loca
 
 ## Next steps
 
-At this point you should have Red Hat PAM, and Kafka on your environment. Before proceeding to the next steps, make sure you have Red Hat PAM and Kafka server up and running.
+At this point you should have {{ product.short }}, and Kafka on your environment. Before proceeding to the next steps, make sure you have both {{ product.short }} and Kafka server up and running.
