@@ -1,5 +1,5 @@
 # Learn business automation 
-Access the labs at: https://kie-learning.github.io/guides/
+Access the labs at: https://timwuthenow.github.io
 
 ---
 ## Contributing to this project

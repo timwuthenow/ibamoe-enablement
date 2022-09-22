@@ -12,7 +12,7 @@ hide:
 [Learn DMN :octicons-rocket-24:](guided_exercises/dmn/introduction.md){ .md-button } 
 [Event-driven processes :octicons-rocket-24:](guided_exercises/bam_kafka/00_introduction.md){ .md-button }
 [Getting started with {{ product.short }} :octicons-rocket-24:](guided_exercises/order_management/try-order-management-app.md){ .md-button }
-[Learn the tools :octicons-rocket-24:](guided_exercises/tools/introduction.md){ .md-button }
+[Extra Learning :octicons-rocket-24:](guided_exercises/tools/introduction.md){ .md-button }
 [{{ product.short }} on OpenShift :octicons-rocket-24:](guided_exercises/operator/introduction.md){ .md-button }
 
 ---
