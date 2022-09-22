@@ -1,4 +1,4 @@
-#  Introduction
+# Introduction
 
 In this guided lab let’s see in practice how we can use process automation applications that fits within event-driven architectures. We can list at least three ways to adjust our business application fit within EDA:
 

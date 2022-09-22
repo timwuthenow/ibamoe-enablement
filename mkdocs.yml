@@ -3,7 +3,7 @@
 site_name: "Learning IBM Business Automation Open Edition"
 site_description: "A set of demos and guided-exercises about business automation with KIE projects"
 site_author: "Tim Wuthenow"
-repo_url: https://github.com/timwuthenow/kogito-guides
+repo_url: https://github.com/timwuthenow/timwuthenow.github.io.git
 edit_uri: ""
 extra_css:
   - stylesheets/extra.css
