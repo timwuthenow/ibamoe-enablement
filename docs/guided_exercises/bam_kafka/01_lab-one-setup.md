@@ -4,31 +4,7 @@ In order to be able to start processes based on new events, we will need to conf
 
 The Red Hat PAM Kafka extension allows the KIE Server (process and decision engine) to react to events and publish events to kafka topics.
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Title</title>
-    <style>
-      /*The . with the boxed represents that it is a class*/
-      .boxed {
-        background: lightgrey;
-        color: black;
-        border: 3px solid black;
-        margin: 0px auto;
-        width: 456px;
-        padding: 10px;
-        border-radius: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="boxed">
 _INFO:_ There are several options in PAM to customize the Kafka address, topic names, etc. In our case, we’re using the default Kafka address, which is, localhost:9092. More customization information can be found in the official Red Hat product documentation: [Configuring a KIE Server to send and receive Kafka messages from the process.](https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/integrating_red_hat_process_automation_manager_with_other_products_and_components/index#kieserver-kafka-proc_integrating-amq-streams)
-    </div>
-  </body>
-</html>
 
 In this setup steps, we will configure {{ product.short }} only in the _server level_ - _we are not yet configuring the business project_. We will see how to configure the project as we move forward on the labs.
 
