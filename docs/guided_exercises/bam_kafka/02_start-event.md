@@ -61,15 +61,15 @@ Now, let's deploy and test the project.
 Let's publish a new event in the `incoming-requests` topic using the Kafka producer CLI tool.
 
 1. Open a new tab in your terminal and access the `strimzi-all-in-one` project folder.
-  `$ cd ~/enablement/amq-examples/strimzi-all-in-one`
+  `cd ~/enablement/amq-examples/strimzi-all-in-one`
   
-1. Next, use the Kafka producer to publish new messages on the topic `incoming-requests`.
+2. Next, use the Kafka producer to publish new messages on the topic `incoming-requests`.
 
     ```bash
     docker-compose exec kafka bin/kafka-console-producer.sh --topic incoming-requests --bootstrap-server localhost:9092
     ```
 
-1. You can send the following data, and press enter:
+3. You can send the following data, and press enter:
 
     ```json
     {"data" : {"customerId": 1, "customerScore": 250, "requestedValue":1500}}
@@ -77,12 +77,12 @@ Let's publish a new event in the `incoming-requests` topic using the Kafka produ
   
     ![Terminal sending event](../images/business_automation/bam_kafka/terminal-send-event.png){:width="800px"}
 
-1. Back to the browser, open Business Central. On the top menu, go to **Menu -> Manage -> Process Instances**.
+4. Back to the browser, open Business Central. On the top menu, go to **Menu -> Manage -> Process Instances**.
 
-1. On the left column, filter by "Completed" State. You should see as many instances as the number of events you published on Kafka:
+5. On the left column, filter by "Completed" State. You should see as many instances as the number of events you published on Kafka:
 
     ![Number of process instances](../images/business_automation/bam_kafka/bc-lab-one-process-instances.png){:width="800px"}
 
-1. Select a process instance, and next, select the tab `Diagram`. You should see something like:
+6. Select a process instance, and next, select the tab `Diagram`. You should see something like:
 
   ![Completed Process Instances](../images/business_automation/bam_kafka/bc-lab-one-completed-process-instance-diagram.png){:width="800px"}

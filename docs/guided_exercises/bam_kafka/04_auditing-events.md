@@ -2,23 +2,23 @@
 
 When using the Kafka extension in {{ product.name }}, every transaction for processes, cases and tasks execution can be tracked via events. For each of these categories, we'll have an event emitted to a Kafka topic, in other words, we'll have three topics here: `jbpm-processes-events`, `jbpm-tasks-events`, `jbpm-cases-events`.
 
-To enable this feature, you need to add the `jbpm-event-emitters-kafka` library to the engine, KIE Server. This can either be downloaded in the [community repository for jBPM](https://search.maven.org/artifact/org.jbpm/jbpm-event-emitters-kafka/) or via the Red Hat customer portal: [rhpam-7.10.0-maven-repository.zip](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=rhpam&version=7.10.0). 
+To enable this feature, you need to add the `jbpm-event-emitters-kafka` library to the engine, KIE Server. This can either be downloaded in the [community repository for jBPM](https://search.maven.org/artifact/org.jbpm/jbpm-event-emitters-kafka/) or via the Red Hat customer portal: [rhpam-7.10.0-maven-repository.zip](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=rhpam&version=7.10.0).
 
 The maven repository have ~1.5GB. In order to facilitate the execution of this lab, you can download the `jbpm-event-emmiters-kafka` for PAM 7.10.0 [here](https://drive.google.com/file/d/1kKnhGMj1Z691vXGanQkgLfGkfGXXmKa7/view?usp=sharing);
 
-1. Stop Red Hat PAM. 
+1. Stop {{ product.short }}.
 
 2. Download the `jbpm-event-emitters-kafka`. It's name will be similar to `jbpm-event-emitters-kafka-7.x.x.Final-redhat-x.jar`.
 
 3. Since this is a behavior only needed by the engine, place the library inside the `kie-server.war` folder, inside the `WEB-INF` directory.
 
-**TIP:** If you downloaded the maven repository zip file in the Red Hat Customer Portal, you can find the jar inside the folder `maven-repository/org/jbpm/jbpm-event-emitters-kafka/7.48.0.Final-redhat-00004/jbpm-event-emitters-kafka-7.48.0.Final-redhat-00004.jar`
+**TIP:** If you downloaded the maven repository zip file in the Red Hat Customer Portal, you can find the jar inside the folder `maven-repository/org/jbpm/jbpm-event-emitters-kafka/7.67.0.Final-redhat-00008/jbpm-event-emitters-kafka-7.67.0.Final-redhat-00008.jar`
 
-~~~
-cp jbpm-event-emitters-kafka-7.48.0.Final-redhat-00004.jar $JBOSS_EAP/standalone/deployments/kie-server.war/WEB-INF/lib/
+~~~shell
+cp jbpm-event-emitters-kafka-7.67.0.Final-redhat-00008.jar $JBOSS_EAP/standalone/deployments/kie-server.war/WEB-INF/lib/
 ~~~
 
-4. Next,start Red Hat PAM server. 
+4. Next,start Red Hat PAM server.
 
 Let's check the auditing behavior. 
 

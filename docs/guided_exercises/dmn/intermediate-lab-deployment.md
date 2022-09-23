@@ -170,7 +170,7 @@ In this section we will create a simple Java client for our DMN model.
 	   <dependency> 
 	     <groupId>org.kie.server</groupId> 
 	     <artifactId>kie-server-client</artifactId> 
-	     <version>7.48.0.Final-redhat-00006</version> 
+	     <version>7.67.0.Final-redhat-00008</version> 
 	     <scope>compile</scope> 
 	   </dependency>
    ~~~

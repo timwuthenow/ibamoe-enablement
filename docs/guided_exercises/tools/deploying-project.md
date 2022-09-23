@@ -63,13 +63,13 @@ Finally, you can import this project in Business Central. In order to do so, thi
    * `git init` 
    * `git add -A`
    * `git commit -m "first commit"`
-3. With this you can already import the project in Business Central. Open business central and select the **import the project** option.
+3. With this you can already import the project in Business Central. Open Business Central and select the **import the project** option.
    * In the pop-up, in the **Repository URL** field, you should insert the git repository. If it is on your local machine you can inform something like: `/$PROJECT_DIR/tooling-labs/mybusinessapp`. Confirm the operation.
 
 4. You should see the project. Select it and click the `Ok` button. 
 
   ![](../images/business_automation/tools/bc-import.png){:width="600px"}
 
-Feel free to explore the project and validate the test scenario and deployment through business central.
+Feel free to explore the project and validate the test scenario and deployment through Business Central.
 
   ![](../images/business_automation/tools/bc-project.png){:width="600px"}
