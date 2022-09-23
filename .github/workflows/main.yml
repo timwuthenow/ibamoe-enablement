@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material -r https://raw.githubusercontent.com/KIE-Learning/guides/main/requirements.txt
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy
