@@ -8,5 +8,5 @@ mkdocs-enumerate-headings-plugin
 mkdocs-git-committers-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-git-revision-date-plugin
-mkdocs-markdownextradata-plugin==0.0.6
+mkdocs-markdownextradata-plugin
 

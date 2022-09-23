@@ -11,7 +11,7 @@ extra_css:
 plugins:
   - search:
       lang: en
-  - markdownextradata
+  - mkdocs-markdownextradata-plugin
   - awesome-pages: #https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
       collapse_single_pages: true
   - enumerate-headings: # https://github.com/timvink/mkdocs-enumerate-headings-plugin
