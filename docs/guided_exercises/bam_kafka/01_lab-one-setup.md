@@ -14,17 +14,15 @@ We can configure the engine to support different capabilities. In order to enabl
 
 1. With {{ product.short }} up and running, execute the following, where `$JBOSS_HOME` is the installation directory of the JBoss EAP instance you're running KIE Server from:
 
-~~~
+~~~ shell
 $JBOSS_HOME/bin/jboss-cli.sh -c
 [standalone@localhost:9990 /] /system-property=org.kie.kafka.server.ext.disabled:add(value=false)
 [standalone@localhost:9990 /] :shutdown(restart=true)
 ~~~
 
-The first command will enable the Kafka extension. Next, we're reestarting EAP so that the new configuration is active. You can check EAP logs to confirm it is restarting.
+The first command will enable the Kafka extension. Next, we're restarting EAP so that the new configuration is active. You can check EAP logs to confirm it is restarting.
 
 The following output will show up in {{ product.short }} logs:
-
-
 
 ~~~
 INFO  [org.kie.server.services.impl.KieServerImpl] (ServerService Thread Pool -- 74) Kafka KIE Server extension has been successfully registered as server extension

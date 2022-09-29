@@ -8,8 +8,9 @@ hide:
 
 ** What will you learn today?**
 
-[Get the tools :octicons-copilot-24:](guided_exercises/00_get_tools/introduction.md){ .md-button } 
-[Learn DMN :octicons-rocket-24:](guided_exercises/dmn/introduction.md){ .md-button } 
+[Get the tools :octicons-copilot-24:](guided_exercises/00_get_tools/introduction.md){ .md-button }
+[First Kogito Project Setup :octicons-zap-24:](guided_exercises/01_getting_started/introduction.md){ .md-button }
+[Learn DMN :octicons-rocket-24:](guided_exercises/dmn/introduction.md){ .md-button }
 [Event-driven processes :octicons-rocket-24:](guided_exercises/bam_kafka/00_introduction.md){ .md-button }
 [Getting started with {{ product.short }} :octicons-rocket-24:](guided_exercises/order_management/try-order-management-app.md){ .md-button }
 [Extra Learning :octicons-rocket-24:](guided_exercises/tools/introduction.md){ .md-button }

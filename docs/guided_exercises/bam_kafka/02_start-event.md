@@ -65,7 +65,7 @@ Let's publish a new event in the `incoming-requests` topic using the Kafka produ
   
 2. Next, use the Kafka producer to publish new messages on the topic `incoming-requests`.
 
-    ```bash
+    ```shell
     docker-compose exec kafka bin/kafka-console-producer.sh --topic incoming-requests --bootstrap-server localhost:9092
     ```
 
