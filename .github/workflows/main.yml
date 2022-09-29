@@ -14,4 +14,4 @@ jobs:
           python-version: 3.x
       - run: pip install mkdocs-material -r https://raw.githubusercontent.com/KIE-Learning/guides/main/requirements.txt
       - run: pip install mkdocs-markdownextradata-plugin
-      - run: mkdocs gh-deploy
+      - run: mkdocs gh-deploy --force
