@@ -6,7 +6,7 @@ hide:
 
 # Home
 
-** What will you learn today?**
+**What will you learn today?**
 
 [Get the tools :octicons-copilot-24:](guided_exercises/00_get_tools/introduction.md){ .md-button }
 [First Kogito Project Setup :octicons-zap-24:](guided_exercises/01_getting_started/introduction.md){ .md-button }
@@ -19,6 +19,7 @@ hide:
 ---
 
 ## About the guides:
+
 **Getting Started with IBAMOE: Order Management**
 : A great guide for users who are trying {{ product.short }} for the first time. Recommended getting started guide.
 

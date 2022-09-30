@@ -1,6 +1,6 @@
 nav:
     - Getting Started with IBAMOE:
         - Introduction: introduction.md
-        - Project Walk-through: 01_walk_through.md
+        - Project Creation and Walk through: 01_walk_through.md
         - Deploy Locally: 01_deploy_local.md
         - Deploy in OpenShift: 02_deploy_openshift.md
