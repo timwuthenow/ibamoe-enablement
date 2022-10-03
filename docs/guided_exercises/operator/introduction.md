@@ -4,22 +4,22 @@ In this lab we will use the enhanced Business Automation Operator **7.10+** to d
 
 ## Goal
 
--   Install the Business Automation Operator on OCP 4.
--   Use the Business Automation Operator 7.10 to deploy a number of Process Automation Manager environments.
--   Change the KIE-App deployment CRDs to show reconciliation.
--   Change Operator ConfigMaps to make advanced configuration changes to the KIE-App.
+- Install the Business Automation Operator on OCP 4.
+- Use the Business Automation Operator 7.10 to deploy a number of Process Automation Manager environments.
+- Change the KIE-App deployment CRDs to show reconciliation.
+- Change Operator ConfigMaps to make advanced configuration changes to the KIE-App.
 
 
-# Problem Statement
+## Problem Statement
 
 In this lab, the goal is to provision and manage various {{ product.name }} architectures using the Business Automation Operator on OpenShift 4.
 
--   We deploy an {{ product.short }} Trial environment, which is a basic ephemeral environment that does not require any form of storage (e.g. persistent volume, database).
--   We explore Operator reconciliation features by removing provisioned resources like Services and Deployment Configs.
--   We alter the deployment through the Operator to show how the provisioned environment changes.
--   We change a KIE configuration parameter in the Business Automation Operator ConfigMap to demonstrate advanced configuration changes.
--   We provision a more sophisticated Production environment, to show creation of PVCs, deployment of databases and integration with {{ product.short }} Smart Router.
--   We use the Operator Installer console to install a new KIE-App deployment.
+- We deploy an {{ product.short }} Trial environment, which is a basic ephemeral environment that does not require any form of storage (e.g. persistent volume, database).
+- We explore Operator reconciliation features by removing provisioned resources like Services and Deployment Configs.
+- We alter the deployment through the Operator to show how the provisioned environment changes.
+- We change a KIE configuration parameter in the Business Automation Operator ConfigMap to demonstrate advanced configuration changes.
+- We provision a more sophisticated Production environment, to show creation of PVCs, deployment of databases and integration with {{ product.short }} Smart Router.
+- We use the Operator Installer console to install a new KIE-App deployment.
 
 ## First steps
 
@@ -27,36 +27,41 @@ In this lab, the goal is to provision and manage various {{ product.name }} arch
 
 1. Create a new project in OpenShift. We suggest the name `rhpam710-operator-lab-user1`.
 
-	![new-ocp-project](../images/business_automation/operator/new-ocp-project.png){:width="650px"}
+    ![new-ocp-project](../images/business_automation/operator/new-ocp-project.png){:width="650px"}
 
-2. Navigate to `Operators`, `Operator Hub`, and search for `Business Automation`:
+1. Navigate to `Operators`, `Operator Hub`, and search for `Business Automation`:
 
-	![install-operator](../images/business_automation/operator/install-operator.png){:width="650px"}
+    ![install-operator](../images/business_automation/operator/install-operator.png){:width="650px"}
 
-3. Click on the Business Automation and then, click `Install`. 
+1. Click on the Business Automation and then, click `Install`. 
 
-	![install-operator-button](../images/business_automation/operator/install-operator-button.png){:width="650px"}
+    ![install-operator-button](../images/business_automation/operator/install-operator-button.png){:width="650px"}
 
-4. You can select the following options, and click on `Submit`:
+1. You can select the following options, and click on `Submit`:
 
-	![operator-install-options](../images/business_automation/operator/operator-install-options.png){:width="650px"}
+    ![operator-install-options](../images/business_automation/operator/operator-install-options.png){:width="650px"}
 
-5. Once subscribed, you should wait for the operator to get provisioned. Then you can proceed with the lab.
+1. Once subscribed, you should wait for the operator to get provisioned. Then you can proceed with the lab.
 
-	![operator-subscription](../images/business_automation/operator/operator-subscription.png){:width="650px"}
+    ![operator-subscription](../images/business_automation/operator/operator-subscription.png){:width="650px"}
 
 ## Inspect the Lab environment
 
 If you attending to an enablement with a provisioned environment. We provisioned an environment where each user already has a subscription to the Business Automation Operator. These Operator subscriptions are managed by the OpenShift cluster admin.
 
-1.  Navigate to the OpenShift Master url.
-2.  Login to the platform with the provided username and password.
+1. Navigate to the OpenShift Master url.
+1. Login to the platform with the provided username and password.
 
-	![](../images/business_automation/operator/operator-lab-project-user.png){:width="650px"}
+    ![OpenShift Homepage](../images/business_automation/operator/operator-lab-project-user.png){:width="650px"}
 
-1.  Open the project `rhpam710-operator-lab-userX`. Open the *Workloads* tab. Observe that the `business-automation-operator` has already been provisioned to your project. This has been done by the cluster-admin by subscribing your project to the Business Automation Operator. ![](../images/business_automation/operator/operator-lab-ba-operator-workload.png){:width="650px"}
+1. Open the project `rhpam710-operator-lab-userX`. Open the *Workloads* tab. Observe that the `business-automation-operator` has already been provisioned to your project. This has been done by the cluster-admin by subscribing your project to the Business Automation Operator. 
 
-2.  Expand the **Operators** menu group in the left-hand-side of the screen and click on **Installed Operators**. This will show the installed Operators, or Operator Subscriptions, in your OpenShift namespace. ![](../images/business_automation/operator/operator-lab-installed-operators.png){:width="650px"}
+    ![Operator Deployment](../images/business_automation/operator/operator-lab-ba-operator-workload.png){:width="650px"}
 
-3.  Click on **Business Automation** to access the **Business Automation** Operator instance in your project. ![](../images/business_automation/operator/operator-lab-ba-operator-overview.png){:width="650px"}
+1. Expand the **Operators** menu group in the left-hand-side of the screen and click on **Installed Operators**. This will show the installed Operators, or Operator Subscriptions, in your OpenShift namespace.
 
+    ![Installed Operators](../images/business_automation/operator/operator-lab-installed-operators.png){:width="650px"}
+
+1. Click on **Business Automation** to access the **Business Automation** Operator instance in your project. 
+
+    ![{{ product.short }} Operator](../images/business_automation/operator/operator-lab-ba-operator-overview.png){:width="650px"}

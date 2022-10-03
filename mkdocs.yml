@@ -27,9 +27,10 @@ plugins:
 
 extra:
   product: 
-    name: "IBM Business Automation Open Edition"
+    name: "IBM Business Automation Open Edition 8.0"
     short: "IBAMOE"
     dm: "Decision Manager"
+    version: "8.0"
   generator: false
 
 theme:

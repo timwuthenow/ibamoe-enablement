@@ -17,8 +17,8 @@ In this setup we will:
 
 1. Next, configure the Kafka topic name in the message name for both nodes as following:
 
-      * `Raise Approved` message name: `requests-approved`
-      * `Raise Denied` message name: `requests-denied`
+      - `Raise Approved` message name: `requests-approved`
+      - `Raise Denied` message name: `requests-denied`
 
         See below one of the nodes, the *Raise Denied* node configuration:
 
@@ -28,11 +28,11 @@ In this setup we will:
 
 ## Configuring the business application
 
-1. In Business Central, navigate to the **Project Settings -> Deployments -> Work Item handlers**: 
+1. In Business Central, navigate to the **Project Settings -> Deployments -> Work Item handlers**:
 
     ![Task Configuration](../images/business_automation/bam_kafka/bc-project-task-config.png){:width="600px"}
 
-Observe that there is a task configured named `Send Task`. In PAM 7.10 you need this configuration to be able to use any `Message Events` (ending and throwing) that would emit events. 
+Observe that there is a task configured named `Send Task`. In {{ product.short }} {{ version }} you need this configuration to be able to use any `Message Events` (ending and throwing) that would emit events.
 
 ## Consuming the events from Kafka topic using Kafka Consumer CLI
 
@@ -40,15 +40,15 @@ In order to validate if our process is emitting processes as we expect, we need 
 
 1. Open a new terminal tab, and navigate to the Kafka project folder.
 
-    ```shell
+    ~~~shell
     cd ~/enablement/amq-examples/strimzi-all-in-one/
-    ```
+    ~~~
 
-2. Start the Kafka command line tool that allows us to consume events that happen in a topic, and therefore, will allow us to know if {{ product.short }} published the events when the process ended. The tool is `kafka-console-consumer.sh`. Let's check if the process emitted events on the topic `requests-approved`.
+1. Start the Kafka command line tool that allows us to consume events that happen in a topic, and therefore, will allow us to know if {{ product.short }} published the events when the process ended. The tool is `kafka-console-consumer.sh`. Let's check if the process emitted events on the topic `requests-approved`.
 
-    ```shell
+    ~~~shell
     docker-compose exec kafka bin/kafka-console-consumer.sh --topic requests-approved --from-beginning --bootstrap-server localhost:9092
-    ```
+    ~~~
 
 ## Testing the solution
 
@@ -56,9 +56,9 @@ To test the solution, we will start a new process instance that will start, be a
 
 1. Like we did on the first lab, let's start a new process instance by publishing a message in the `incoming-requests` topic. If you canceled the execution of the kafka producer, here's how you can start it:
 
-    ```shell
+    ~~~shell
     docker-compose exec kafka bin/kafka-console-producer.sh --topic incoming-requests --bootstrap-server localhost:9092
-    ```
+    ~~~
 
     You can use the following data in your event: `{"data" : {"customerId": 1, "customerScore": 250, "requestedValue":1500}}`
 
@@ -66,7 +66,7 @@ To test the solution, we will start a new process instance that will start, be a
 
 1. Now check the terminal where you are consuming the messages in the `requests-approved` topic. You should see a new event published by your process. The event will look like this (though not on multiple lines):
 
-    ```json
+    ~~~json
     {
     "specversion":"1.0",
     "time":"2021-04-14T18:04:42.532-0300",
@@ -75,18 +75,18 @@ To test the solution, we will start a new process instance that will start, be a
     "source":"/process/cc-limit-approval-app.cc-limit-raise-approval/5",
     "data":null
     }
-    ```
+    ~~~
 
-2. Identify the process ID on the event above. In this example, the process instance that emitted this event was process of ID **5**.
+1. Identify the process ID on the event above. In this example, the process instance that emitted this event was process of ID **5**.
 
-3. Let's check this same process instance in Business Central. In Business Central, open the **Menu -> Manage -> Process Instances**. 
+1. Let's check this same process instance in Business Central. In Business Central, open the **Menu -> Manage -> Process Instances**.
 
-4. On the left column, filter by "Completed" State. You should see as many instances as the number of events you published on Kafka.
+1. On the left column, filter by "Completed" State. You should see as many instances as the number of events you published on Kafka.
 
     ![Filtered Process Instance View](../images/business_automation/bam_kafka/bc-process-instance-list-filtered.png){:width="600px"}
 
-5. Identify your process instance ID. In this example, instance with id **5**. Select the process instance.
+1. Identify your process instance ID. In this example, instance with id **5**. Select the process instance.
 
-6. Next, select the tab `Diagram`. You should see something like:
+1. Next, select the tab `Diagram`. You should see something like:
 
     ![Process Instance view](../images/business_automation/bam_kafka/bc-lab-two-process-instances.png){:width="600px"}

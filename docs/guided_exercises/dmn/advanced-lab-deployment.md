@@ -6,11 +6,11 @@ With our decision model completed, we can now package our DMN model in a Deploym
 
 To deploy your business application, follow these steps:
 
-1.  In the bread-crumb navigation in the upper-left corner, click on `call-centre-decisions` to go back to the project’s Library View.
+1. In the bread-crumb navigation in the upper-left corner, click on `call-centre-decisions` to go back to the project’s Library View.
 
-2.  Click on the **Deploy** button in the upper-right corner of the screen. This will package our DMN mode in a Deployment Unit (KJAR) and deploy it onto the Execution Server (KIE-Server).
+1. Click on the **Deploy** button in the upper-right corner of the screen. This will package our DMN mode in a Deployment Unit (KJAR) and deploy it onto the Execution Server (KIE-Server).
 
-3.  Go to the **Execution Servers** perspective by clicking on "Menu → Deploy → Execution Servers". You will see the **Deployment Unit** deployed on the Execution Server.
+1. Go to the **Execution Servers** perspective by clicking on "Menu → Deploy → Execution Servers". You will see the **Deployment Unit** deployed on the Execution Server.
 
 ## Testing DMN Solution
 
@@ -20,35 +20,35 @@ In this section, you will test the DMN solution with Execution Server’s Swagge
 
 The Swagger interface provides the description and documentation of the Execution Server’s RESTful API. At the same time, it allows the APIs to be called from the UI. This enables developers and users to quickly test a, in this case, a deployed DMN Service .
 
-1.  Navigate to [KIE Server](https://localhost:8080/kie-server) swagger docs
+1. Navigate to [KIE Server](https://localhost:8080/kie-server) swagger docs
 
-2.  Locate the **DMN Models** section. The DMN API provides the DMN model as a RESTful resources, which accepts 2 operations:
+1. Locate the **DMN Models** section. The DMN API provides the DMN model as a RESTful resources, which accepts 2 operations:
 
-    1.  `GET`: Retrieves the DMN model.
+    - `GET`: Retrieves the DMN model.
 
-    2.  `POST`: Evaluates the decisions for a given input.
+    - `POST`: Evaluates the decisions for a given input.
 
-3.  Expand the `GET` operation by clicking on it.
+1. Expand the `GET` operation by clicking on it.
 
-4.  Click on the **Try it out** button.
+1. Click on the **Try it out** button.
 
-5.  Set the **containerId** field to `call-centre-decision` and set the **Response content type** to `application/json` and click on **Execute** ![DMN Swagger Get](../images/business_automation/dmn/dmn-swagger-get.png){:width="800px"}
+1. Set the **containerId** field to `call-centre-decision` and set the **Response content type** to `application/json` and click on **Execute** ![DMN Swagger Get](../images/business_automation/dmn/dmn-swagger-get.png){:width="800px"}
 
-6.  If requested, provide the username and password of your **Business Central** and **KIE-Server** user.
+1. If requested, provide the username and password of your **Business Central** and **KIE-Server** user.
 
-7.  The response will be the model-description of your DMN model.
+1. The response will be the model-description of your DMN model.
 
 Next, we will evaluate our model with some input data. We need to provide our model with the **incoming call**, **list of employees** and **office location**.
 
-1.  Expand the `POST` operation and click on the **Try it out** button
+1. Expand the `POST` operation and click on the **Try it out** button
 
-2.  Set the **containerId** field to `call-centre-decisions`. Set the **Parameter content type** and **Response content type** fields to `application/json`.
+1. Set the **containerId** field to `call-centre-decisions`. Set the **Parameter content type** and **Response content type** fields to `application/json`.
 
-3.  Pass the following request to evaluate whether the given call is accepted by the call-centre.
+1. Pass the following request to evaluate whether the given call is accepted by the call-centre.
 
     **IMPORTANT**: We’re explicitly specifying the **decision-name** of the decision we want to evaluate. If we would not specify this, the engine will evaluate the full model, and hence will also require us to pass the `call` input. When we only evaluate the `Accept Call` decision, we only need to specify the inputs of `Accept Call`. In the decision service invocation in the `Accept Call` logic, the input `incoming call` is passed to the `call` parameter of the decision service.
 
-    ~~~
+    ~~~json
       { 
         "decision-name" : "Accept Call",
         "dmn-context":{ 
@@ -70,7 +70,7 @@ Next, we will evaluate our model with some input data. We need to provide our mo
       } 
 
     ~~~
-    
+
     Click on **Execute**. The result value of the `Accept Call` should be `true`. Test the service with a number of other values. For example, specify a banned phone number like: +421 92000001
 
 ### Using the KIE-Server Client
@@ -81,11 +81,11 @@ In this section we will create a simple Java client for our DMN model.
 
 **IMPORTANT:** If your KIE Server is exposed via https you need to configure the ``javax.net.ssl.trustStore and `javax.net.ssl.trustStorePassword` in the Java client code using the Remote Java API. If not, you may get a `rest.NoEndpointFoundException`. For more information check [this solution](https://access.redhat.com/solutions/5424601) Red Hat's knowledge base.
 
-1.  Create a new Maven Java JAR project in your favourite IDE (e.g. IntelliJ, Eclipse, Visual Studio Code).
+1. Create a new Maven Java JAR project in your favourite IDE (e.g. IntelliJ, Eclipse, Visual Studio Code).
 
-2. Add the following dependency to your project:
+1. Add the following dependency to your project:
 
-   ~~~ 
+   ~~~xml
     <dependency> 
       <groupId>org.kie.server</groupId> 
       <artifactId>kie-server-client</artifactId> 
@@ -94,52 +94,52 @@ In this section we will create a simple Java client for our DMN model.
     </dependency> 
    ~~~
 
-3.  Create a Java package in your `src/main/java` folder with the name `org.kie.dmn.lab`.
+1. Create a Java package in your `src/main/java` folder with the name `org.kie.dmn.lab`.
 
-4.  In the package you’ve just created, create a Java class called `Main`.
+1. In the package you’ve just created, create a Java class called `Main`.
 
-5.  Add a `public static void main(String[] args)` method to your main class.
+1. Add a `public static void main(String[] args)` method to your main class.
 
-6. Before we implement our method, we first define a number of constants that we will need when implementing our method (note that the values of your constants can be different depending on your environment, model namespace, etc.):
+1. Before we implement our method, we first define a number of constants that we will need when implementing our method (note that the values of your constants can be different depending on your environment, model namespace, etc.):
 
-   ~~~ 
+   ~~~java
    private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
    private static final String CONTAINER_ID = "call-centre-decisions"; 
-   private static final String USERNAME = "pamAdmin"; 
-   private static final String PASSWORD = "redhatpam1!"; 
+   private static final String USERNAME = "bamAdmin"; 
+   private static final String PASSWORD = "ibmpam1!"; 
    private static final String DMN_MODEL_NAMESPACE = "https://kiegroup.org/dmn/_2E9DCCE2-8C2B-496E-AC37-103694E51940";
    private static final String DMN_MODEL_NAME = "call-centre";
    ~~~
 
-7. KIE-Server client API classes can mostly be retrieved from the `KieServicesFactory` class. We first need to create a `KieServicesConfiguration` instance that will hold our credentials and defines how we want our client to communicate with the server:
+1. KIE-Server client API classes can mostly be retrieved from the `KieServicesFactory` class. We first need to create a `KieServicesConfiguration` instance that will hold our credentials and defines how we want our client to communicate with the server:
 
-   ~~~
+   ~~~java
    KieServicesConfiguration kieServicesConfig = KieServicesFactory.newRestConfiguration(KIE_SERVER_URL, new
    EnteredCredentialsProvider(USERNAME, PASSWORD)); 
    kieServicesConfig.setMarshallingFormat(MarshallingFormat.JSON);
    ~~~
 
-8. Next, we create the `KieServicesClient`:
+1. Next, we create the `KieServicesClient`:
 
-   ~~~
+   ~~~java
    KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig);
    ~~~
 
-9. From this client we retrieve our DMNServicesClient:
+1. From this client we retrieve our DMNServicesClient:
 
-   ~~~
+   ~~~java
    DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class);
    ~~~
 
-10. To pass the input values to our model to the Execution Server, we need to create a `DMNContext`:
+1. To pass the input values to our model to the Execution Server, we need to create a `DMNContext`:
 
-    ~~~
+    ~~~java
     DMNContext dmnContext = dmnServicesClient.newContext(); 
     ~~~
 
-11. We pass the input variables to the `DMNContext`. We define the following three methods that create the data inputs:
+1. We pass the input variables to the `DMNContext`. We define the following three methods that create the data inputs:
 
-    ~~~
+    ~~~java
     private static Map<String, Object> getIncomingCall() { 
       Map<String, Object> incomingCall = new HashMap<>(); 
       Map<String, Object> phone = new HashMap<>(); 
@@ -164,27 +164,27 @@ In this section we will create a simple Java client for our DMN model.
       return office;
     }
     ~~~
-    
-12. We can now add the data to the `DMNContext` as follows:
 
-    ~~~
+1. We can now add the data to the `DMNContext` as follows:
+
+    ~~~java
     dmnContext.set("incoming call", getIncomingCall()); dmnContext.set("employees", getEmployees()); 
     dmnContext.set("office", getOffice()); 
     ~~~
 
-13. We now have defined all the required instances needed to send a DMN evaluation request to the server. We explicitly specify which decision we want to evaluate, in this case the `Accept Call` decision, by using the `evaluateDecisionByName` of the `DMNServiceClient`.
+1. We now have defined all the required instances needed to send a DMN evaluation request to the server. We explicitly specify which decision we want to evaluate, in this case the `Accept Call` decision, by using the `evaluateDecisionByName` of the `DMNServiceClient`.
 
-    ~~~
+    ~~~java
     ServiceResponse<DMNResult> dmnResultResponse = dmnServicesClient.evaluateDecisionByName(CONTAINER_ID, DMN_MODEL_NAMESPACE, DMN_MODEL_NAME, "Accept Call", dmnContext);
     ~~~
 
-14. Finally we can retrieve the DMN evaluation result and print it in the console:
+1. Finally we can retrieve the DMN evaluation result and print it in the console:
 
-    ~~~
+    ~~~java
     DMNDecisionResult decisionResult = dmnResultResponse.getResult().getDecisionResultByName("Accept Call"); 
     System.out.println("Is the call accepted?: " + decisionResult.getResult()); 
     ~~~
 
-15. Compile your project and run it. Observe the output in the console, which should say: **Is the call accepted?: true**
+1. Compile your project and run it. Observe the output in the console, which should say: **Is the call accepted?: true**
 
 The complete project can be found here: <https://github.com/kmacedovarela/dmn-workshop-labs/tree/master/call-centre-dmn-lab-client>

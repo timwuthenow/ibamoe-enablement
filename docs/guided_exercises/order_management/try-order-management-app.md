@@ -15,7 +15,7 @@ We expect you to have installed in your machine:
 * Java JDK 11 ( if you don't have it yet, you can download OpenJDK built by Red Hat https://developers.redhat.com/openjdk-install )
 * GIT client (https://git-scm.com/) 
 * *{{ product.name }} Installation Demo*:
-  **NOTE**: You should use this installer to quickly install EAP, PAM and pre-configure the environment and user access you'll need.  
+  **NOTE**: You should use this installer to quickly install EAP, PAM and pre-configure the environment and user access you'll need.
   `$ git clone https://github.com/timwuthenow/ibamoe-docker.git`
 
 You should now have successfully installed {{ product.name }}.

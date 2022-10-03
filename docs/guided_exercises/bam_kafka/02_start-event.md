@@ -61,19 +61,22 @@ Now, let's deploy and test the project.
 Let's publish a new event in the `incoming-requests` topic using the Kafka producer CLI tool.
 
 1. Open a new tab in your terminal and access the `strimzi-all-in-one` project folder.
-  `cd ~/enablement/amq-examples/strimzi-all-in-one`
+
+    ~~~shell
+    cd ~/enablement/amq-examples/strimzi-all-in-one
+    ~~~
   
 2. Next, use the Kafka producer to publish new messages on the topic `incoming-requests`.
 
-    ```shell
+    ~~~shell
     docker-compose exec kafka bin/kafka-console-producer.sh --topic incoming-requests --bootstrap-server localhost:9092
-    ```
+    ~~~
 
 3. You can send the following data, and press enter:
 
-    ```json
+    ~~~json
     {"data" : {"customerId": 1, "customerScore": 250, "requestedValue":1500}}
-    ```
+    ~~~
   
     ![Terminal sending event](../images/business_automation/bam_kafka/terminal-send-event.png){:width="800px"}
 

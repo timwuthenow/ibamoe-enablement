@@ -38,17 +38,17 @@ There is also a set of community tooling that's also available for use. All the 
 
 The DMN Editor consists of a number of components:
 
--   **Decision Navigator**: shows the nodes used in the Decision Requirements Diagram (DRD, the diagram), and the decisions behind the nodes. Allows for quick navigation through the model.
+- **Decision Navigator**: shows the nodes used in the Decision Requirements Diagram (DRD, the diagram), and the decisions behind the nodes. Allows for quick navigation through the model.
 
--   **Decision Requirements Diagram Editor**: the canvas in which the model can be created.
+- **Decision Requirements Diagram Editor**: the canvas in which the model can be created.
 
--   **Palette**: Contains all the DMN constructs that can be used in a DRD, e.g. Input Node, Decision Node, etc.
+- **Palette**: Contains all the DMN constructs that can be used in a DRD, e.g. Input Node, Decision Node, etc.
 
--   **Expression Editor**: Editor in which DMN boxed expressions, like decision tables and literal expressions, can be created.
+- **Expression Editor**: Editor in which DMN boxed expressions, like decision tables and literal expressions, can be created.
 
--   **Property Panel**: provides access to the properties of the model (name, namespace, etc), nodes, etc.
+- **Property Panel**: provides access to the properties of the model (name, namespace, etc), nodes, etc.
 
--   **Data Types**: allows the user to define (complex) datatypes.
+- **Data Types**: allows the user to define (complex) datatypes.
 
 ![DRD](../images/business_automation/dmn/dmn-editor-components.jpg){:width="600px"}
 
@@ -62,7 +62,7 @@ These are the labs you have available in this workshop:
 
 - Insurance Price calculation: a getting started exercise. You will import an existing module, explore it, deploy it and test it using the decision engine's REST API.
 
-	![](../images/business_automation/dmn/insurance-price-drd.png){:width="600px"}
+	![Pricing DRD](../images/business_automation/dmn/insurance-price-drd.png){:width="600px"}
 
 - Vacation Days: an intermediate level exercise. You will author a model from scratch, use decision tables, work with different hit policies, different FEEL constructs and expressions. Finally, you will deploy it and test it using not only the decision engine's REST API but also the Java KIE Client API.
 
@@ -73,5 +73,3 @@ These are the labs you have available in this workshop:
 	![Decision Service Knowledge Requirement](../images/business_automation/dmn/decision-service-knowledge-requirement.png){:width="800px"}
 
 These are independent guided exercises and you don't need to implement the previous use case to implement the next one.
-
-
