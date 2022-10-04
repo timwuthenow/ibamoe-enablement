@@ -6,13 +6,24 @@ hide:
 
 # Home
 
-**What will you learn today?**
+**What will you learn in these labs?**
+
+## Introduction to getting the tools kickstarted
 
 [Get the tools :octicons-copilot-24:](guided_exercises/00_get_tools/introduction.md){ .md-button }
 [First Kogito Project Setup :octicons-zap-24:](guided_exercises/01_getting_started/introduction.md){ .md-button }
-[Learn DMN :octicons-rocket-24:](guided_exercises/dmn/introduction.md){ .md-button }
-[Event-driven processes :octicons-rocket-24:](guided_exercises/bam_kafka/00_introduction.md){ .md-button }
+
+## {{ product.name }} Decision Manager Exercises
+
+[Learn DMN :octicons-rocket-24:](guided_exercises/03_dmn/introduction.md){ .md-button }
+
+## {{ product.name }} Process Automation Exercises
+
 [Getting started with {{ product.short }} :octicons-rocket-24:](guided_exercises/order_management/try-order-management-app.md){ .md-button }
+[Event-driven processes :octicons-rocket-24:](guided_exercises/bam_kafka/00_introduction.md){ .md-button }
+
+## More topics
+
 [Extra Learning :octicons-rocket-24:](guided_exercises/tools/introduction.md){ .md-button }
 [{{ product.short }} on OpenShift :octicons-rocket-24:](guided_exercises/operator/introduction.md){ .md-button }
 

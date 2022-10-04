@@ -67,4 +67,3 @@ Now that we have seen a little of the DMN Decision, let's use the combined power
     2022-09-29 20:48:35,728 INFO  Profile dev activated. Live Coding activated.
     2022-09-29 20:48:35,728 INFO  Installed features: [cdi, kogito-decisions, kogito-predictions, kogito-processes, kogito-rules, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
     ~~~
-    

@@ -1,10 +1,10 @@
 nav:
-    - DMN:
+    - DMN Exercises:
         - Introduction: introduction.md
-        - Insurance Price - Getting Started: getting-started.md
-        - Vacation Days - Introduction: intermediate-lab-intro.md
+        - Getting Started DMN Exercises - Insurance Price - Getting Started: getting-started.md
+        - Intermediate DMN Exercises - Vacation Days - Introduction: intermediate-lab-intro.md
         - Vacation Days - Authoring Decisions: intermediate-lab-authoring.md
         - Vacation Days - Consuming Decisions: intermediate-lab-deployment.md
-        - Call Center - Introduction: advanced-lab-intro.md
+        - Advanced DMN Exercises - Call Center - Introduction: advanced-lab-intro.md
         - Call Centre - Authoring Decisions: advanced-lab-authoring.md
         - Call Centre - Consuming Decisions: advanced-lab-deployment.md

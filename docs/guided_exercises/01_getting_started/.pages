@@ -1,5 +1,5 @@
 nav:
-    - Getting Started with IBAMOE:
+    - Getting Started with Kogito:
         - Introduction: introduction.md
         - Project Creation and Walk through: 01_walk_through.md
         - Deploy Locally: 01_deploy_local.md
