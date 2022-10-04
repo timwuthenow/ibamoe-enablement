@@ -6,4 +6,4 @@ This section will focus on how to setup your first Kogito projects from scratch.
 
 [:octicons-zap-24:  Deploy locally](01_deploy_local.md)
 
-[:octicons-rocket-24:  Deploy to OpenShift](guided_exercises/dmn/introduction.md)
+[:octicons-rocket-24:  Deploy to OpenShift](01_deploy_openshift.md)

@@ -47,17 +47,17 @@ In the previous section, you setup Maven locally in your environment, so you sho
 
     ![DMN First view](../images/business_automation/introduction/workspace-layout.png)
 
-7. If you click *Age* and then click the *Properties* icon on the right, you will open a pane for the input. 
+7. If you click *Age* and then click the *Properties* icon on the right, you will open a pane for the input.
 
-    ![DMN Properties](../images/business_automation/introduction/properties-open.png)
+    ![DMN Properties](../images/business_automation/introduction/properties-open.png){:width="50%", :height="25%"}
 
 8. Within this pane, you can see information about the input *Age*, this includes that it is a number and what the input name is. More can be changed around this object, including changing the color of the node, font size, etc.
 
-    ![DMN Properties Expanded](../images/business_automation/introduction/properties-expanded.png)
+    ![DMN Properties Expanded](../images/business_automation/introduction/properties-expanded.png){:width="40%", :height="30%"}
 
 9. To view the Decision, click the square decision node and select the `Edit` button to enter the decision for *Base Price*.
 
-    ![Edit DMN Decision](../images/business_automation/introduction/open-decision.png)
+    ![Edit DMN Decision](../images/business_automation/introduction/open-decision.png){:width="50%", :height="25%"}
 
 10. From here you will see the Decision Table that is associated with the Base Price decision. From here you will see two (2) input columns (`Age` and `Previous Incidents`), as well as one output column (`Base price`) all with their types below them. These types are controlled from the properties panel similarly to how they were opened when looking at `Age` a few steps ago. This decision has 4 different rows that could fire, with a Hit Policy of `UNIQUE` signified by the **U** in the top left corner of the table. A decision writer could make any comments they want to the table and have them saved towards the decision here
 
