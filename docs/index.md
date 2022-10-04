@@ -4,9 +4,7 @@ hide:
 - toc
 ---
 
-# Home
-
-**What will you learn in these labs?**
+# {{ product.name }} Enablement
 
 ## Introduction to getting the tools kickstarted
 
