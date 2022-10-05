@@ -26,4 +26,3 @@ In this lab we will create an Order Management process that manages the process 
 - The supplier sends an offer stating the expected delivery date and its best offer.
 - Depending on the urgency of the urgency and the price, the order can be auto-approved by a DMN decision.
 - If the order is not auto-approved, the manager needs to complete an approval step.
-

@@ -801,7 +801,7 @@ In this section we will create a simple Java client for our Order Management pro
 
 ---------------
 
-The complete project can be found here: <https://github.com/DuncanDoyle/order-management-rhpam-lab-client>
+The complete project can be found here: <https://github.com/timwuthenow/order-management-rhpam-lab-client>
 
 The KIE-Server Client provides more services to interact with the Execution Server:
 
