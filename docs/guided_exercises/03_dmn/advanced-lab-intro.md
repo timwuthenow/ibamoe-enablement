@@ -27,23 +27,23 @@ To define and deploy a DMN decision model, we first need to create a new project
 
 1. Click on **Design** to navigate to the Design perspective.
 
-    ![BC Splash Screen](../images/business_automation/dmn/business-central-design.png){:width="600px"}
+    ![BC Splash Screen](../99_images/business_automation/dmn/business-central-design.png){:width="600px"}
 
 1. In the Design perspective, create a new project. If your space is empty, this can be done by clicking on the blue **Add Project** button in the center of the page. If you already have projects in your space, you can click on the blue **Add Project** icon at the top right of the page.
 
 1. Give the project the name `call-centre-decisions`, and the description "Call Centre Decisions".
 
-    ![Create Call Centre Decisions](../images/business_automation/dmn/add-project-call-centre-decisions.png){:width="600px"}
+    ![Create Call Centre Decisions](../99_images/business_automation/dmn/add-project-call-centre-decisions.png){:width="600px"}
 
 1. With the project created, we can now create our DMN model. Click on the blue **Add Asset** button.
 
 1. In the **Add Asset** page, select **Decision** in the dropdown filter selector.
 
-    ![Add new assets decision](../images/business_automation/dmn/new-asset-decisions-filter.png){:width="600px"}
+    ![Add new assets decision](../99_images/business_automation/dmn/new-asset-decisions-filter.png){:width="600px"}
 
 1. Click on the **DMN** tile to create a new DMN model. Give it the name `call-centre`. This will create the asset and open the DMN editor.
 
-![Create DMN called call-centre](../images/business_automation/dmn/add-dmn-call-centre.png){:width="600px"}
+![Create DMN called call-centre](../99_images/business_automation/dmn/add-dmn-call-centre.png){:width="600px"}
 
 ## Next Steps
 

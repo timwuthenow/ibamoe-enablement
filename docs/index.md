@@ -17,8 +17,8 @@ hide:
 
 ## {{ product.name }} Process Automation Exercises
 
-[Getting started with {{ product.short }} :octicons-rocket-24:](guided_exercises/order_management/try-order-management-app.md){ .md-button }
-[Event-driven processes :octicons-rocket-24:](guided_exercises/bam_kafka/00_introduction.md){ .md-button }
+[Getting started with {{ product.short }} :octicons-rocket-24:](guided_exercises/04_order_management/01_try-order-management-app.md){ .md-button }
+[Event-driven processes :octicons-rocket-24:](guided_exercises/05_05_05_bam_kafka/00_introduction.md){ .md-button }
 
 ## More topics
 
@@ -39,7 +39,7 @@ hide:
 
 ### Event-driven processes
 
-: This hands-on workshop allows the user to validate the experience of creating loan approval workflow with decision automation. The user will also have an introduction to Fuse, develop an endpoint and consume it using the workflow. 
+: This hands-on workshop allows the user to validate the experience of creating loan approval workflow with decision automation. The user will also have an introduction to Fuse, develop an endpoint and consume it using the workflow.
 
 ### Learn the tools
 

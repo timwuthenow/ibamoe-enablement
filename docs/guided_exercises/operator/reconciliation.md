@@ -4,7 +4,7 @@ The OpenShift Operators provide functionality to reconciliate an existing enviro
 
 1. Open the **Resources** tab. This will show all the resources of the application deployed and managed by the Operator.
 
-    ![Deployed resources](../images/business_automation/operator/operator-lab-rhpam-trial-kie-app-resources.png){:width="650px"}
+    ![Deployed resources](../99_images/business_automation/operator/operator-lab-rhpam-trial-kie-app-resources.png){:width="650px"}
 
 1. On the fourth row, we can see the `rhpam-trial-kieserver` **Service** resource.
 
@@ -12,6 +12,6 @@ The OpenShift Operators provide functionality to reconciliate an existing enviro
 
 1. Delete the **Service** by clicking on the **Actions** button at the upper right of the screen and clicking on **Delete**.
 
-    ![Delete Service](../images/business_automation/operator/operator-lab-rhpam-trial-kie-server-service-delete.png){:width="650px"}
+    ![Delete Service](../99_images/business_automation/operator/operator-lab-rhpam-trial-kie-server-service-delete.png){:width="650px"}
 
 1. Notice the **Service** disappearing and immediately reappearing. This is the Operators reconciliation logic at work, bringing the environment back in its expected state.

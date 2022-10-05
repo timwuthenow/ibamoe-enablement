@@ -6,7 +6,7 @@ The Operator stores its configuration in a number of *ConfigurationMaps*. These 
 
 A powerful feature of OpenShift are ConfigMaps which provide mechanisms to inject containers with configuration data while keeping containers agnostic of OpenShift Container Platform. A ConfigMap can be used to store fine-grained information like individual properties or coarse-grained information like entire configuration files or JSON blobs. In this section, we will modify some of the default health properties that are different than the defaults provided with {{ product.short }} and we want them to roll out to every container that gets created with the operator.
 
-1. In the OpenShift Console, open **Workloads → Config Maps**. ![Config Maps](../images/business_automation/operator/operator-lab-config-maps.png){:width="650px"}
+1. In the OpenShift Console, open **Workloads → Config Maps**. ![Config Maps](../99_images/business_automation/operator/operator-lab-config-maps.png){:width="650px"}
 
 1. Note that the Operator keeps the current ConfigMaps, and the ones of the last 2 versions.
 
@@ -34,6 +34,6 @@ Apart from provisioning an {{ product.short }} application, the Operator also al
 
 1. Navigate to **Operators → Installed Operators → Business Automation → KieApp**.
 
-1. Click on the kebab icon of the `rhpam-trial` KieApp and click **Delete**. ![Delete trial](../images/business_automation/operator/operator-lab-rhpam-trial-delete-kie-app.png){:width="650px"}
+1. Click on the kebab icon of the `rhpam-trial` KieApp and click **Delete**. ![Delete trial](../99_images/business_automation/operator/operator-lab-rhpam-trial-delete-kie-app.png){:width="650px"}
 
-1. Navigate back to **Workloads → Deployment Configs** and note that the {{ product.short }} Deployment Configs have been removed. ![Validate deletion](../images/business_automation/operator/operator-lab-rhpam-trial-dc-deleted.png){:width="650px"}
+1. Navigate back to **Workloads → Deployment Configs** and note that the {{ product.short }} Deployment Configs have been removed. ![Validate deletion](../99_images/business_automation/operator/operator-lab-rhpam-trial-dc-deleted.png){:width="650px"}

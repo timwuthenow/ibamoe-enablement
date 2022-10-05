@@ -27,23 +27,23 @@ In this lab, the goal is to provision and manage various {{ product.name }} arch
 
 1. Create a new project in OpenShift. We suggest the name `rhpam710-operator-lab-user1`.
 
-    ![new-ocp-project](../images/business_automation/operator/new-ocp-project.png){:width="650px"}
+    ![new-ocp-project](../99_images/business_automation/operator/new-ocp-project.png){:width="650px"}
 
 1. Navigate to `Operators`, `Operator Hub`, and search for `Business Automation`:
 
-    ![install-operator](../images/business_automation/operator/install-operator.png){:width="650px"}
+    ![install-operator](../99_images/business_automation/operator/install-operator.png){:width="650px"}
 
 1. Click on the Business Automation and then, click `Install`. 
 
-    ![install-operator-button](../images/business_automation/operator/install-operator-button.png){:width="650px"}
+    ![install-operator-button](../99_images/business_automation/operator/install-operator-button.png){:width="650px"}
 
 1. You can select the following options, and click on `Submit`:
 
-    ![operator-install-options](../images/business_automation/operator/operator-install-options.png){:width="650px"}
+    ![operator-install-options](../99_images/business_automation/operator/operator-install-options.png){:width="650px"}
 
 1. Once subscribed, you should wait for the operator to get provisioned. Then you can proceed with the lab.
 
-    ![operator-subscription](../images/business_automation/operator/operator-subscription.png){:width="650px"}
+    ![operator-subscription](../99_images/business_automation/operator/operator-subscription.png){:width="650px"}
 
 ## Inspect the Lab environment
 
@@ -52,16 +52,16 @@ If you attending to an enablement with a provisioned environment. We provisioned
 1. Navigate to the OpenShift Master url.
 1. Login to the platform with the provided username and password.
 
-    ![OpenShift Homepage](../images/business_automation/operator/operator-lab-project-user.png){:width="650px"}
+    ![OpenShift Homepage](../99_images/business_automation/operator/operator-lab-project-user.png){:width="650px"}
 
 1. Open the project `rhpam710-operator-lab-userX`. Open the *Workloads* tab. Observe that the `business-automation-operator` has already been provisioned to your project. This has been done by the cluster-admin by subscribing your project to the Business Automation Operator. 
 
-    ![Operator Deployment](../images/business_automation/operator/operator-lab-ba-operator-workload.png){:width="650px"}
+    ![Operator Deployment](../99_images/business_automation/operator/operator-lab-ba-operator-workload.png){:width="650px"}
 
 1. Expand the **Operators** menu group in the left-hand-side of the screen and click on **Installed Operators**. This will show the installed Operators, or Operator Subscriptions, in your OpenShift namespace.
 
-    ![Installed Operators](../images/business_automation/operator/operator-lab-installed-operators.png){:width="650px"}
+    ![Installed Operators](../99_images/business_automation/operator/operator-lab-installed-operators.png){:width="650px"}
 
 1. Click on **Business Automation** to access the **Business Automation** Operator instance in your project. 
 
-    ![{{ product.short }} Operator](../images/business_automation/operator/operator-lab-ba-operator-overview.png){:width="650px"}
+    ![{{ product.short }} Operator](../99_images/business_automation/operator/operator-lab-ba-operator-overview.png){:width="650px"}

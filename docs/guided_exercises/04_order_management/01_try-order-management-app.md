@@ -2,7 +2,7 @@
 
 This guide shows you the experience of using {{ product.name }} to author, deploy, and execute your business automation applications. With three steps, this guide will get you from installation to deployment and testing of a business application:
 
-![](../images/business_automation/order_management/01_try/3-steps.png)
+![Three steps](../99_images/business_automation/order_management/01_try/3-steps.png)
 
 We will install {{ product.short }} locally, and it will run on top of Red Hat JBoss EAP (a.k.a. WildFly). Once we have it up and running, we will import an existing application, so that we have an overview of some capabilities by exploring the tool and the project itself. Finally, we'll wrap up by deploying the project and testing it. 
 
@@ -11,7 +11,7 @@ We will install {{ product.short }} locally, and it will run on top of Red Hat J
 We expect you to have installed in your machine:
 
 * Java JDK 11 ( if you don't have it yet, you can download OpenJDK built by Red Hat https://developers.redhat.com/openjdk-install )
-* GIT client (https://git-scm.com/) 
+* GIT client (https://git-scm.com/)
 * *{{ product.name }} Installation Demo*:
   **NOTE**: You should use this installer to quickly install EAP, PAM and pre-configure the environment and user access you'll need.
   `$ git clone https://github.com/timwuthenow/ibamoe-docker.git`
@@ -37,52 +37,52 @@ Let's start by accessing Business Central.
 
 1. Click on "Design, create and modify projects and pages"
 
-![Design splash](../images/business_automation/order_management/01_try/pam-hw-1.png)
+![Design splash](../99_images/business_automation/order_management/01_try/pam-hw-1.png)
 
 1. Select "MySpace", and next, click on "Import Project":
 
-![Import project](../images/business_automation/order_management/01_try/pam-hw-2.png)
+![Import project](../99_images/business_automation/order_management/01_try/pam-hw-2.png)
 
 1. Insert the following repository URL, and click on Import.
 https://github.com/jbossdemocentral/rhpam7-order-management-demo-repo.git
 
-![Git URL](../images/business_automation/order_management/01_try/pam-hw-3.png)
+![Git URL](../99_images/business_automation/order_management/01_try/pam-hw-3.png)
 
 1. Select the Order-Management project and click on OK.
 
-![Select project](../images/business_automation/order_management/01_try/pam-hw-4.png)
+![Select project](../99_images/business_automation/order_management/01_try/pam-hw-4.png)
 
 1. Once the project has been imported, notice it has 27 assets. Click on the filter button "All" and select Process.
 
-![Filter to Process](../images/business_automation/order_management/01_try/pam-hw-5.png)
+![Filter to Process](../99_images/business_automation/order_management/01_try/pam-hw-5.png)
 
 1. Open the order-management process. This is the automated process that determines the approval or denial of an order request. As you see below, it is implemented with the BPMN2 standard.
 
-![View Process](../images/business_automation/order_management/01_try/pam-hw-6.png)
+![View Process](../99_images/business_automation/order_management/01_try/pam-hw-6.png)
 
 1. The final element of this process, is a sub-process "Place Order in ERP". This subprocess includes advanced bpmn2 modeling concepts like compensation and event based gateways. Have in mind that PAM supports the modeling of advanced flows using the bpmn2 specification, but don't worry if you don't fully get what is happening in this subprocess.
 
-![Subprocess](../images/business_automation/order_management/01_try/pam-hw-7.png)
+![Subprocess](../99_images/business_automation/order_management/01_try/pam-hw-7.png)
 
 1. Notice this process tasks are aggregated in three lanes: Manager, Purchase and Supplier. The approval decision will be made based on multiple authors, but, in this process we even have the support of automated decision. The automated decision is made on the node "Auto Approve Decision", that references a DMN Model that is also part of this business project.
 
-![Rule package in Process](../images/business_automation/order_management/01_try/pam-hw-8.png)
+![Rule package in Process](../99_images/business_automation/order_management/01_try/pam-hw-8.png)
 
 1. Close the process modeler. Now, filter the assets by Decision. You should see a Test Scenario and a DMN model.
 
-![Filter by Decision](../images/business_automation/order_management/01_try/pam-hw-9.png)
+![Filter by Decision](../99_images/business_automation/order_management/01_try/pam-hw-9.png)
 
 1. Open the order-approval. It is a simple decision model that can define the "Approve" decision based on the data input "Order Information" and on the "Price Tolerance" business rules.
 
-![View DMN](../images/business_automation/order_management/01_try/pam-hw-10.png)
+![View DMN](../99_images/business_automation/order_management/01_try/pam-hw-10.png)
 
 1. Now, close the decision asset. In your project page, click on the Deploy button. Business Central will trigger the build of this maven project, that will be packaged in a KJAR (the deployment unit which contains the assets) and will be deployed on the KIE server.
 
-![Deploy button to deploy to KIE Server](../images/business_automation/order_management/01_try/pam-hw-11.png)
+![Deploy button to deploy to KIE Server](../99_images/business_automation/order_management/01_try/pam-hw-11.png)
 
 1. Once the build and deployment has finished, you'll see a successful deployment message. Click on the "View deployment details" link.
 
-![View deployment details](../images/business_automation/order_management/01_try/pam-hw-12.png)
+![View deployment details](../99_images/business_automation/order_management/01_try/pam-hw-12.png)
 
 1. The page will show a running “default-kieserver” with the “order-management_1.1-SNAPSHOT” container deployed.
 
@@ -97,33 +97,33 @@ Another way to consume our business project is to use Business Central UI to int
 For this hello world, let's use Business Central process and task management capabilities.
 
 1. In Business Central, let's open the Menu in the top bar and navigate to "Process Definitions"
-    ![Open Process Definitions](../images/business_automation/order_management/01_try/pam-hw-13.png)
+    ![Open Process Definitions](../99_images/business_automation/order_management/01_try/pam-hw-13.png)
 1. We can see three different process definitions. We'll start a new process instance based on the "order-management" process. Click on the actions kebab, and select "Start"
-    ![Start Process Instance](../images/business_automation/order_management/01_try/pam-hw-14.png)
+    ![Start Process Instance](../99_images/business_automation/order_management/01_try/pam-hw-14.png)
 1. The form that opened is also part of our business process and we can customize it if needed. For now, let's just fill in the data required to start our process instance, and click the "Submit" button.
    * Item Name: Laptop Dell XPS 15
    * Urgency: Medium
-    ![Create instance](../images/business_automation/order_management/01_try/pam-hw-15.png)
+    ![Create instance](../99_images/business_automation/order_management/01_try/pam-hw-15.png)
 1. A new process instance will start in the engine. In order to visualize the current status, click on "Diagram".
-    ![View diagram](../images/business_automation/order_management/01_try/pam-hw-16.png)
+    ![View diagram](../99_images/business_automation/order_management/01_try/pam-hw-16.png)
 1. Notice we currently have a Human Task named "Request Offer" waiting for human intervention. Now, let's work on this task. In the Menu, access the "Task Inbox":
-    ![Task Inbox](../images/business_automation/order_management/01_try/pam-hw-17.png)
+    ![Task Inbox](../99_images/business_automation/order_management/01_try/pam-hw-17.png)
 1. In the list you should see a list of tasks you have permission to see and work on. Let's claim the Request Offer task to our user, and start working on it. Click on the kebab and select the "Claim and Work" option: 
-    ![Claim and work](../images/business_automation/order_management/01_try/pam-hw-18.png)
+    ![Claim and work](../99_images/business_automation/order_management/01_try/pam-hw-18.png)
 1. You'll see the task data available for your analysis, as a knowledge worker - someone responsible for executing the task. 
 1. Click on the blue "Start" button to start working on the task.Based on this offer, we'll define our reply. Inform the following data and click on the blue "Complete" button:
    * Category : optional
    * Target Price: 250
    * Suplier list: supplier 1
-    ![Work task](../images/business_automation/order_management/01_try/pam-hw-19.png)
+    ![Work task](../99_images/business_automation/order_management/01_try/pam-hw-19.png)
 1. According to our process, a new task will be created for the suppliers. The supplier should provide an offer - so let's do it. Still on the task list, claim and work the task "Prepare Offer":
-    ![Work prepare offer](../images/business_automation/order_management/01_try/pam-hw-20.png)
+    ![Work prepare offer](../99_images/business_automation/order_management/01_try/pam-hw-20.png)
 1. Click "Start" blue button, inform any date, and the best offer as **1000**. Click on complete.
-    ![Best offer](../images/business_automation/order_management/01_try/pam-hw-21.png)
+    ![Best offer](../99_images/business_automation/order_management/01_try/pam-hw-21.png)
 1. At this point, the automatic approval was already taken, and our request was not automatically approved. You can confirm this by visualizing the process instance. On the kebab, select "View Process"
-    ![View process](../images/business_automation/order_management/01_try/pam-hw-22.png)
+    ![View process](../99_images/business_automation/order_management/01_try/pam-hw-22.png)
 1. You'll be redirected to the list of process instances. Select the process instance with id 1, and then, choose the "Diagram" option:
-    ![Diagram](../images/business_automation/order_management/01_try/pam-hw-23.png)
+    ![Diagram](../99_images/business_automation/order_management/01_try/pam-hw-23.png)
 
 At this point, you have learned how you manage processes and tasks using Business Central. You know how to start new process instances, how to interact with the process tasks and how to complete them.
 

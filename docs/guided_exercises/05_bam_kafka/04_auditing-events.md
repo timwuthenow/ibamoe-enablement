@@ -36,7 +36,7 @@ In this example we will check the behavior for our event driven business applica
 
 1. You should be able to see a new process instance can be seen in Business Central in the following status:
 
- ![Active Human Task in Process](../images/business_automation/bam_kafka/active-human-task-process.png){:width="600px"}
+ ![Active Human Task in Process](../99_images/business_automation/bam_kafka/active-human-task-process.png){:width="600px"}
 
 1. You can use the kafka consumer CLI script to check the messages that were emitted on the topics: `jbpm-processes-events` and `jbpm-tasks-events`.
 
@@ -54,7 +54,7 @@ In this example we will check the behavior for our event driven business applica
 
 2. Using Business Central, tnteract with the human task `Analyst Validation`, and check the events emitted on the `jbpm-tasks-events`.
 
- ![Task Inbox](../images/business_automation/bam_kafka/bc-task-inbox.png){:width="600px"}
+ ![Task Inbox](../99_images/business_automation/bam_kafka/bc-task-inbox.png){:width="600px"}
 
 You should be able to see at every task change, a new event in the `jbpm-tasks-events`. Also, for every transaction commited for the process, you should see new events on the `jbpm-process-events`.
 

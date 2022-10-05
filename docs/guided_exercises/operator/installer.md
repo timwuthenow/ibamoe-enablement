@@ -5,8 +5,8 @@ The Business Automation Operator contains an *Operator Installer Console*. This 
 ## Wizard walk through
 
 1. Go the Business Automation Operator and click in **Installer** link.
-    ![Operator Installer](../images/business_automation/operator/operator-lab-installer-console-route.png){:width="650px"}
-    ![Operator Installer Form](../images/business_automation/operator/operator-lab-installer-console.png){:width="650px"}
+    ![Operator Installer](../99_images/business_automation/operator/operator-lab-installer-console-route.png){:width="650px"}
+    ![Operator Installer Form](../99_images/business_automation/operator/operator-lab-installer-console.png){:width="650px"}
 
 1. Login with Openshift. A page will show up asking for authorization. Select all options and click on "Allow selected permissions".
 
@@ -28,7 +28,7 @@ The Business Automation Operator contains an *Operator Installer Console*. This 
 
 1. Go back to the OpenShift Console.
 
-1. Navigate to **Workloads → Deployment Configs** and observe that a new {{ product.name }} production environment has been deployed. Note that this environment has a PostgreSQL database deployed. Also note that both the Business Central and KIE-Server Deployment Configs have their ReplicationController set to 3 pods. ![Find the deployment configuration](../images/business_automation/operator/operator-lab-installer-rhpam-prod-dc.png){:width="650px"}
+1. Navigate to **Workloads → Deployment Configs** and observe that a new {{ product.name }} production environment has been deployed. Note that this environment has a PostgreSQL database deployed. Also note that both the Business Central and KIE-Server Deployment Configs have their ReplicationController set to 3 pods. ![Find the deployment configuration](../99_images/business_automation/operator/operator-lab-installer-rhpam-prod-dc.png){:width="650px"}
 
 1. Go back to the **Operators → Installed Operators → Business Automation → KieApp**.
 
@@ -40,9 +40,9 @@ We will now deploy a new production environment using the installer, but this ti
 
 1. Go back to the Business Automation Operator, and open the Wizard.
 
-1. Create a new {{ product.short }} Production Environment. Continue until you reach the **KIE Servers** screen. ![KIE Installer](../images/business_automation/operator/operator-lab-installer-console-new-kieserver.png){:width="650px"}
+1. Create a new {{ product.short }} Production Environment. Continue until you reach the **KIE Servers** screen. ![KIE Installer](../99_images/business_automation/operator/operator-lab-installer-console-new-kieserver.png){:width="650px"}
 
-1. Click **Add new KIE Server** and use the following configuration for your KIE-Server. ![KIE Server Form](../images/business_automation/operator/operator-lab-installer-console-new-kieserver-configuration.png){:width="800px"}
+1. Click **Add new KIE Server** and use the following configuration for your KIE-Server. ![KIE Server Form](../99_images/business_automation/operator/operator-lab-installer-console-new-kieserver-configuration.png){:width="800px"}
 
 1. Click through the rest of the screens until you can press the **Deploy** button to deploy the environment.
 

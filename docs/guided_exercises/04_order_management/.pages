@@ -1,0 +1,5 @@
+nav:
+    - Order Management:
+        - Introduction: 01_try-order-management-app.md
+        - Order Management Background: 02_create-order-management-app.md
+        - Lab Walk Through: lab-walkthrough.md

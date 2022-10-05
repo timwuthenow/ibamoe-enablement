@@ -9,12 +9,12 @@ The use case we'll try out is the automation of a repeated decision for requests
 In the project we've just created:
 
 1. Select the folder where you want to create the new file. Click on `resources`. Next, click on the *new folder* icon:
-  ![](../images/business_automation/tools/vscode-new-file.png){:width="600px"}
+  ![](../99_images/business_automation/tools/vscode-new-file.png){:width="600px"}
 
 2. Name the file `automated-request-approval.dmn` and press enter. The file should open in the DMN Editor.
 
 3. Create the following DMN:
-  ![](../images/business_automation/tools/dmn-drd.png){:width="600px"}
+  ![](../99_images/business_automation/tools/dmn-drd.png){:width="600px"}
   
   * This DRD contains:
     * A decision node `Approval` of type `boolean`;
@@ -23,7 +23,7 @@ In the project we've just created:
         * A `request price`, that is a `number`.
 
 4. Implement the following decision table, in the decision node:
-  ![](../images/business_automation/tools/dmn-dt.png){:width="600px"}
+  ![](../99_images/business_automation/tools/dmn-dt.png){:width="600px"}
 
 5. Save the diagram
 
@@ -87,7 +87,7 @@ In this scenario, the `version.org.kie` should be compatible with the product ve
 
 It should look like this:
 
-  ![](../images/business_automation/tools/junitactivator.png){:width="600px"}
+  ![](../99_images/business_automation/tools/junitactivator.png){:width="600px"}
 
 ### Creating the test scenario
 
@@ -95,10 +95,10 @@ It should look like this:
 
 6. The editor should open up with the option to choose the **Source type**. This is the type of rule you want to test. 
 7. Select DMN, next, choose your DMN file and click on the **create** button.
-  ![](../images/business_automation/tools/scesim-create.png){:width="600px"}
+  ![](../99_images/business_automation/tools/scesim-create.png){:width="600px"}
 
 8. The tool will already bring the inputs and expected result columns based on your DMN. Now, implement the following test:
-  ![](../images/business_automation/tools/scesim-table.png){:width="600px"}
+  ![](../99_images/business_automation/tools/scesim-table.png){:width="600px"}
 
 ### Runing the tests
 
@@ -111,13 +111,13 @@ mvn test
 If you want to run the tests using the activator class:
 
 1. Right click the `ScenarioJunitActivatorTest.java` file and select `Run Java`:
-  ![](../images/business_automation/tools/scesim-run.png){:width="600px"}
+  ![](../99_images/business_automation/tools/scesim-run.png){:width="600px"}
 
 2. The execution results should show up:
-  ![](../images/business_automation/tools/scesim-run-pass.png){:width="600px"}
+  ![](../99_images/business_automation/tools/scesim-run-pass.png){:width="600px"}
 
 3. Try changing the line one expected result from `true` to `false`. Click on the re-run button to see the results.
-  ![](../images/business_automation/tools/scesim-run-fail.png){:width="600px"}
+  ![](../99_images/business_automation/tools/scesim-run-fail.png){:width="600px"}
 
 ----------
 

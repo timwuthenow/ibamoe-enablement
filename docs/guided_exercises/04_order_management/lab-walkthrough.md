@@ -6,12 +6,12 @@ To define and deploy a business process, we first need to create a new project i
 1. Login to the platform with the provided username and password.
 1. Click on **Design** to navigate to the Design perspective.
 
-    ![Empty Business Central Space](../images/business_automation/order_management/bc-design-empty.png)
+    ![Empty Business Central Space](../99_images/business_automation/order_management/bc-design-empty.png)
 
 1. In the Design perspective, create a new project. If your space is empty, this can be done by clicking on the blue **Add Project** button in the center of the page. If you already have projects in your space, you can click on the blue **Add Project** icon at the top right of the page.
 1. Give the project the name `order-management`, and the description "Order Management".
 
-    ![Create project](../images/business_automation/order_management/create-order-management-project.png)
+    ![Create project](../99_images/business_automation/order_management/create-order-management-project.png)
 
 With the project created, we can now start building our solution.
 
@@ -30,16 +30,16 @@ The business process will collect and carry data through the execution of the pr
 
  1. In your project, click on the *Add Asset* button in the middle of the screen.
 
-    ![Add Asset](../images/business_automation/order_management/add-asset-button.png)
+    ![Add Asset](../99_images/business_automation/order_management/add-asset-button.png)
 
  1. In the drop-down menu in the upper-left corner, select `Model`. Click on the *Data Object*
    tile.
 
-    ![New Data Object](../images/business_automation/order_management/new-data-object.png)
+    ![New Data Object](../99_images/business_automation/order_management/new-data-object.png)
 
  1. Give the *Data Object* the name `OrderInfo`. Leave the package set to default.
 
-    ![Order Info creation](../images/business_automation/order_management/new-data-object-order-info.png)
+    ![Order Info creation](../99_images/business_automation/order_management/new-data-object-order-info.png)
 
  1. Add the following fields to the `OrderInfo` data object:
 
@@ -55,7 +55,7 @@ The business process will collect and carry data through the execution of the pr
  1. Click on the blue *Add Asset* button in the top-right corner and create a new *Data Object*
  1. Give it the name `SupplierInfo`
 
-    ![Supplier Info creation](../images/business_automation/order_management/new-data-object-supplier-info.png)
+    ![Supplier Info creation](../99_images/business_automation/order_management/new-data-object-supplier-info.png)
 
  1. Give the `SupplierInfo` object the following fields:
 
@@ -67,7 +67,7 @@ The business process will collect and carry data through the execution of the pr
 
  1. We’re done creating our data model.
 
-    ![Data Model Created](../images/business_automation/order_management/data-model-created.png)
+    ![Data Model Created](../99_images/business_automation/order_management/data-model-created.png)
 
 We can now start with our process design.
 
@@ -77,7 +77,7 @@ We can now start with our process design.
 
 With the domain model defined, we can now sketch out the main flow of the process, the actors, the user task nodes and the required automation decisions.
 
-![Completed Process View](../images/business_automation/order_management/order-management-process.png)
+![Completed Process View](../99_images/business_automation/order_management/order-management-process.png)
 
 1. Create a new `Business Process` asset. Name it `OrderManagement`. You can do this by clicking `Add an Asset` and then selecting `Business Process` and then setting the name as `OrderManagement`.
 
@@ -91,17 +91,17 @@ With the domain model defined, we can now sketch out the main flow of the proces
     | supplierInfo | SupplierInfo |
     | approved | Boolean |
 
-    ![Process Variables Set](../images/business_automation/order_management/process-variables.png)
+    ![Process Variables Set](../99_images/business_automation/order_management/process-variables.png)
 
 ### Prepare Offer
 
 1. In the palette on the left-side of the editor, select the `Lane` component:
 
-    ![palette-swimlane](../images/business_automation/order_management/palette-swimlane.png)
+    ![palette-swimlane](../99_images/business_automation/order_management/palette-swimlane.png)
 
 1. Create the following 3 swimlanes:  **Supplier** , **Purchase** ,  **Manager**
 
-    ![Three Swimlanes](../images/business_automation/order_management/three-swimlanes.png)
+    ![Three Swimlanes](../99_images/business_automation/order_management/three-swimlanes.png)
 
    1. Create the **Start Event** node in the `Purchase` swimlane.
    1. Create the `Prepare Offer` **User Task** node in the `Supplier` swimlane and connect it to the **Start Event** node. Set the following properties on the node via the properties panel on the right side of the screen:
@@ -160,7 +160,7 @@ With the domain model defined, we can now sketch out the main flow of the proces
     </tbody>
     </table>
 
-    ![Prepare Offer Node](../images/business_automation/order_management/prepare-offer-node.png)
+    ![Prepare Offer Node](../99_images/business_automation/order_management/prepare-offer-node.png)
 
 1. Create the `Auto Approve Order` **Business Rule** node in the `Purchase` swimlane and connect it to the `Prepare Offer` node. Set the following properties:
    - Rule language: `DMN`
@@ -213,7 +213,7 @@ With the domain model defined, we can now sketch out the main flow of the proces
 </tbody>
 </table>
 
-  ![Auto Approval Rules](../images/business_automation/order_management/auto-approval-rules-node.png)
+  ![Auto Approval Rules](../99_images/business_automation/order_management/auto-approval-rules-node.png)
 
   > 📘 INFO: After we've created our DMN Decision Model, we will revisit the configuration of this node to reference this DMN model via its `name` and `namespace` properties.
 
@@ -221,7 +221,7 @@ With the domain model defined, we can now sketch out the main flow of the proces
 
 1. Create an **X-OR Gateway**/**Exclusive Gateway** in the `Manager` swimlane, below the `Auto Approve Order` node and connect it to that node.
 
-![Exclusive Gateway](../images/business_automation/order_management/xor-gateway-auto-approve-order.png)
+![Exclusive Gateway](../99_images/business_automation/order_management/xor-gateway-auto-approve-order.png)
 
 1. Create the `Approve` **User Task** in the `Manager` swimlane and connect it to the **X-OR** gateway. Set the following properties:
     - Task Name: `Approve`
@@ -276,15 +276,15 @@ With the domain model defined, we can now sketch out the main flow of the proces
     </tbody>
     </table>
 
-  ![Human Task Approve](../images/business_automation/order_management/approve-node.png)
+  ![Human Task Approve](../99_images/business_automation/order_management/approve-node.png)
 
 1. Create an **X-OR Gateway**/**Exclusive Gateway** in the `Manager` swimlane, after the `Approve` node and connect it to that node.
 
-  ![Gateway Approve](../images/business_automation/order_management/xor-gateway-approve.png)
+  ![Gateway Approve](../99_images/business_automation/order_management/xor-gateway-approve.png)
 
 1. Create another **X-OR Gateway**/**Exclusive Gateway** under the `Manager` swimlane (so outside of the swimlane) and connect it to the two other **X-OR Gateways**/**Exclusive Gateways** as shown in image below:
 
-  ![Gateway Merge](../images/business_automation/order_management/xor-gateway-approved.png)
+  ![Gateway Merge](../99_images/business_automation/order_management/xor-gateway-approved.png)
 
 1. Create the `Place Order in ERP` **Script Task** under the `Manager` swimlane (so outside of the swimlanes) and connect it to the **X-OR Gateway** we created earlier. Set the following script in the node’s properties properties:
 
@@ -292,39 +292,39 @@ With the domain model defined, we can now sketch out the main flow of the proces
     System.out.println("Place Order in ERP");
     ~~~
 
-  ![Script Task](../images/business_automation/order_management/place-order-in-erp-node.png)
+  ![Script Task](../99_images/business_automation/order_management/place-order-in-erp-node.png)
 
 1. Create an **End Event** node under the `Manager` swimlane (so outside of the swimlanes) and connect it to the `Place Order in ERP` node. Name it `Approved`.
 
-![Happy Path End Event](../images/business_automation/order_management/approved-end-event.png)
+![Happy Path End Event](../99_images/business_automation/order_management/approved-end-event.png)
 
 1. Create an **End Event** node in the `Purchase` swimlane and connect it to the **X-OR Gateway**. Name it `Rejected`.
 
-![Rejected End Event](../images/business_automation/order_management/rejected-end-event.png)
+![Rejected End Event](../99_images/business_automation/order_management/rejected-end-event.png)
 
 1. On the **Sequence Flow** from the **X/OR Gateway** before the `Approve` node that is connnected ot the other **X/OR Gateway**, set the following condition, which tells the process engine that this path should be taken when the order is not automatically approved:
     - Process Variable: `approved`
     - Condition: `Is true`
 
-![Approved Flow](../images/business_automation/order_management/sequence-flow-approved-condition.png)
+![Approved Flow](../99_images/business_automation/order_management/sequence-flow-approved-condition.png)
 
 1. On the **Gateway** before the `Approve node`, set the **Default Route** property to `Approve`.
 
-![Set default route](../images/business_automation/order_management/xor-gateway-default-route-approve.png)
+![Set default route](../99_images/business_automation/order_management/xor-gateway-default-route-approve.png)
 
 1. On the **Sequence Flow** from the **X/OR Gateway** after the `Approve` task, which is connected to the **X/OR Gateway** before the `Place Order in ERP` task, set the following condition:
     - Process Variable: `orderInfo.managerApproval`
     - Condition: `Is true`
 
-![Manager Approval Needed](../images/business_automation/order_management/sequence-flow-manager-approval-condition.png)
+![Manager Approval Needed](../99_images/business_automation/order_management/sequence-flow-manager-approval-condition.png)
 
 1. On the **X/OR Gateway** after the `Approval` node , set the **Default Route** to `Rejected`.
 
-![Default Rejected](../images/business_automation/order_management/xor-gateway-default-route-rejected.png)
+![Default Rejected](../99_images/business_automation/order_management/xor-gateway-default-route-rejected.png)
 
 1. Save the process definition.
 
-![Completed process drawn](../images/business_automation/order_management/completed-process.png)
+![Completed process drawn](../99_images/business_automation/order_management/completed-process.png)
 
 With the overall layout of the process definition complete, the routing logic implemented, and the I/O assignments defined, we can now implement the business rules of our automated approval decision.
 
@@ -338,70 +338,70 @@ Our **Order Management** process contains a **Business Rule Task**, but we have 
 
 2. In the next screen, set the drop-down filter to **Decision**. Select the **DMN** asset. Give it the name `order-approval`.
 
-   ![Add DMN Asset](../images/business_automation/order_management/add-asset-dmn-order-approval.png)
+   ![Add DMN Asset](../99_images/business_automation/order_management/add-asset-dmn-order-approval.png)
 
    1. In the DMN editor, open the property-panel on the right-side of the screen and set the
       *Namespace* property to: `http://www.redhat.com/dmn/demo/order-management-dmn` . First we need to import our data-model, so we can use it in our DMN decisions. In the DMN editor, click on the *Data Types* tab and click on the *Import Data Object* button at the right-hand side of the screen:
 
-   ![Import Data Object](../images/business_automation/order_management/dmn-import-data-object.png)
+   ![Import Data Object](../99_images/business_automation/order_management/dmn-import-data-object.png)
 
    1. Select both the `OrderInfo` and `SupplierInfo` objects and click on the *Import* button:
 
-   ![dmn-import-data-objects-select.png[]](../images/business_automation/order_management/dmn-import-data-objects-select.png[].png)
+   ![dmn-import-data-objects-select.png[]](../99_images/business_automation/order_management/dmn-import-data-objects-select.png[].png)
 
    ​ With the 2 datatypes imported, we need to create a third type that will hold the possible values for the `urgency` field of our `Order Information`. Click on the blue *Add* button in the top-right corner.
 
    1. In the entry that opens, give the data type the *Name* `Urgency` and the *Type* `string`:
 
-   ![Data type urgency](../images/business_automation/order_management/dmn-data-type-urgency.png)
+   ![Data type urgency](../99_images/business_automation/order_management/dmn-data-type-urgency.png)
 
    1. Click on the *Add Constraints* button, select `Enumeration` as the *constraint type*, and set the values  low` and `high`.
 
-   ![Urgency enumeration](../images/business_automation/order_management/dmn-data-type-urgency-enumeration.png)
+   ![Urgency enumeration](../99_images/business_automation/order_management/dmn-data-type-urgency-enumeration.png)
 
    1. Click on the blue checkmark button to save the type.
 
-   ![Data type save](../images/business_automation/order_management/dmn-datatype-save.png)
+   ![Data type save](../99_images/business_automation/order_management/dmn-datatype-save.png)
 
    1. Navigate back to the model via the *Model* tab. Add 2 `Input` nodes to the model and name them `Order Information` and `Supplier Information`
 
-   ![DMN Inputs](../images/business_automation/order_management/dmn-input-nodes.png)
+   ![DMN Inputs](../99_images/business_automation/order_management/dmn-input-nodes.png)
 
    1. Select the `Order Information` node. Open the properties panel on the right-hand side of the screen, and set the *Data type* to `OrderInfo`.
 
-   ![Order Info Type](../images/business_automation/order_management/dmn-orderinfo-datatype.png)
+   ![Order Info Type](../99_images/business_automation/order_management/dmn-orderinfo-datatype.png)
 
    1. Do the same for the `Supplier Information` node. Set the *Data type* to `SupplierInfo`. Create a new `Business Knowledge Model` node, name it `Price Tolerance`.
 
    1. Click on the node, and click on the *Edit* button to start editting the node:
 
-   ![BKM Price Tolerance](../images/business_automation/order_management/dmn-bkm-price-tolerance-edit.png)
+   ![BKM Price Tolerance](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-edit.png)
 
-   ![Price Tolerance Function](../images/business_automation/order_management/dmn-bkm-price-tolerance-feel-function.png)
+   ![Price Tolerance Function](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-feel-function.png)
 
    1. Click in the *Edit parameters*. An editor will open. Click on *Add parameter*. Name the parameter `order information` and set the type to `OrderInfo`.
 
-   ![BKM Parameter](../images/business_automation/order_management/dmn-bkm-price-tolerance-feel-function-parameter.png)
+   ![BKM Parameter](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-feel-function-parameter.png)
 
    1. Right click in the empty white cell under the parameter definitions and select *Clear*. The text *Select expression* will appear in the cell. Click on the cell and select `Decision Table`.
 
-   ![BKM Table](../images/business_automation/order_management/dmn-bkm-price-tolerance-decision-table.png)
+   ![BKM Table](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-decision-table.png)
 
    1. Add an *input clause* to the decision table. The name of the *input clause* is `order information.urgency`, which references the `urgency`  attribute of the `order information` parameter. Set the type to `Urgency`, which references the `Urgency` enumeration we created earlier.
 
-   ![BKM Input Clause](../images/business_automation/order_management/dmn-bkm-price-tolerance-dtable-input-clause.png)
+   ![BKM Input Clause](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-dtable-input-clause.png)
 
    1. Set the *output clause* data type to `number`. Leave the name empty.
 
-   ![BKM Output Clause](../images/business_automation/order_management/dmn-bkm-price-tolerance-dtable-output-clause.png)
+   ![BKM Output Clause](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-dtable-output-clause.png)
 
    1. Click on the `Price Tolerance` cell (top cell of the table), and set the data type to `number`.
 
-   ![BKM Tolerance](../images/business_automation/order_management/dmn-bkm-price-tolerance-data-type.png)
+   ![BKM Tolerance](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-data-type.png)
 
    1. Implement the rest of the decision table as shown below. And save the DMN model.
 
-   ![BKM Complete](../images/business_automation/order_management/dmn-bkm-price-tolerance-dtable-complete.png)
+   ![BKM Complete](../99_images/business_automation/order_management/dmn-bkm-price-tolerance-dtable-complete.png)
 
 ### Writing the DMN Decision
 
@@ -409,22 +409,22 @@ In this section we will complete the writing of the DMN decision.
 
    1. Navigate back to the model by clicking on the *Back to order-approval* link at the top-left of the editor. Create a new *Decision Node* and name it `Approve`. Connect the 2 input nodes and out `Price Tolerance` busines knowledge model node to the new decision node.
 
-   ![DMN Complete](../images/business_automation/order_management/dmn-complete.png)
+   ![DMN Complete](../99_images/business_automation/order_management/dmn-complete.png)
 
    1. Select the `Approve` decision node and click on the edit button.
 
-   ![Click approve](../images/business_automation/order_management/dmn-decision-node-approve-edit.png)
+   ![Click approve](../99_images/business_automation/order_management/dmn-decision-node-approve-edit.png)
 
    1. Click on \_Select Expression, and set the logic type to `Literal Expression`.
-       ![Select literal expression](../images/business_automation/order_management/dmn-decision-node-approve-literal-expression-type.png)
+       ![Select literal expression](../99_images/business_automation/order_management/dmn-decision-node-approve-literal-expression-type.png)
 
    1. Enter the following expression: `Supplier Information.offer < Price Tolerance(Order  Information) * Order Information.targetPrice`
 
-   ![Literal expression implemented](../images/business_automation/order_management/dmn-decision-node-aprove-literal-expression.png)
+   ![Literal expression implemented](../99_images/business_automation/order_management/dmn-decision-node-aprove-literal-expression.png)
 
    1. Click on the `Approve` cell (top cell of the table), and set the data type to `boolean`.
 
-   ![Approval data type select](../images/business_automation/order_management/dmn-decision-node-approve-type.png)
+   ![Approval data type select](../99_images/business_automation/order_management/dmn-decision-node-approve-type.png)
 
 ## Connecting the Decision to the Process
 
@@ -438,7 +438,7 @@ In this section we will complete the writing of the DMN decision.
    1. In the same properties panel, expand the *Data Assignments* section and open the *Assignments* editor
    1. Implement the following data input and output assignments.
 
-   ![Process data mapping](../images/business_automation/order_management/decision-auto-approve-order-data-io.png)
+   ![Process data mapping](../99_images/business_automation/order_management/decision-auto-approve-order-data-io.png)
 
    1. Our BPMN model is now complete. Make sure to save the model.
 
@@ -454,55 +454,55 @@ In this lab however, we will be creating these forms using the **Form Modeler** 
 
 Let’s start with the process start form. We want to create the following form:
 
-![OrderManagement Task Form](../images/business_automation/order_management/OrderManagement-taskform-form.png)
+![OrderManagement Task Form](../99_images/business_automation/order_management/OrderManagement-taskform-form.png)
 
 1. In the project’s library view, click on **Add Asset**. Filter on **Form**, click on the **Form** tile. Enter the details as shown in the screenshot below:
 
-    ![Create Process Start Form](../images/business_automation/order_management/create-process-start-form.png)
+    ![Create Process Start Form](../99_images/business_automation/order_management/create-process-start-form.png)
 
 1. On this form we want to specify the initial order. We therefore require fields from the `orderInfo` and `supplierInfo` process variable. When we expand the `Model Fields` section, we can see our 2 process variables (`orderInfo` and `supplierInfo`). These are both complex objects. To work with complex objects (as opposed to simple types like integers and booleans), we require a data-form for that specific object. We therefore first need to create a data-form for our `OrderInfo` and `SupplierInfo` objects.
 
 1. Go back to the project’s library view, click again on **Add Asset** and create a new form. Use the following details:
 
 ![Create Order Management Order
-Form](../images/business_automation/order_management/create-order-management-order-form.png)
+Form](../99_images/business_automation/order_management/create-order-management-order-form.png)
 
 1. Using the Form Modeler constructs, create the following form:
 
-![OrderManagement Order](../images/business_automation/order_management/OrderManagement-Order-form.png)
+![OrderManagement Order](../99_images/business_automation/order_management/OrderManagement-Order-form.png)
 
 1. To create this form, drag both the `item`, `urgency` and `targetPrice` onto the canvas and configure them as follows.
 
    - List Box:
 
-![Item Name OrderManagement-Order Field](../images/business_automation/order_management/item-name-ordermanagement-order-field.png)
+![Item Name OrderManagement-Order Field](../99_images/business_automation/order_management/item-name-ordermanagement-order-field.png)
 
 - Radio Group:
 
-![Urgency OrderManagement-Order Field](../images/business_automation/order_management/urgency-ordermanagement-order-field.png)
+![Urgency OrderManagement-Order Field](../99_images/business_automation/order_management/urgency-ordermanagement-order-field.png)
 
 - Decimal Box:
 
-![Target Price OrderManagement-Order Field](../images/business_automation/order_management/target-price-order-management-order-field.png)
+![Target Price OrderManagement-Order Field](../99_images/business_automation/order_management/target-price-order-management-order-field.png)
 
 1. Save the form and create another new form for our `supplierInfo`. Use the following details.
 
-![Supplier Info Form](../images/business_automation/order_management/create-order-management-supplierinfo-form.png).
+![Supplier Info Form](../99_images/business_automation/order_management/create-order-management-supplierinfo-form.png).
 
 1. Using the Form Modeler constructs, create the following form:
 
-![OrderManagement SupplierInfo](../images/business_automation/order_management/OrderManagement-SupplierInfo-form.png)
+![OrderManagement SupplierInfo](../99_images/business_automation/order_management/OrderManagement-SupplierInfo-form.png)
 
 1. To create this form, drag the `user` field onto the canvas and configure it as follows.
 
-![User OrderManagement-SupplierInfo Field](../images/business_automation/order_management/user-ordermanagement-supplierinfo-field.png)
+![User OrderManagement-SupplierInfo Field](../99_images/business_automation/order_management/user-ordermanagement-supplierinfo-field.png)
 
 1. Save the form and open the `OrderManagement` form (the first form we created).
 1.  Drag the `orderInfo` process variable onto the canvas. In the pop-up form, set the `OrderManagement-Order` form we just created as the **Nested Form**:
 
-![Order Management Order Subform Select](../images/business_automation/order_management/ordermanagement-order-subform-select.png) 11. Drag the `supplierInfo` process variable ontoo the canvas. In the pop-up form, set the `OrderManagement-SupplierInfo` form we just created as the **Nested Form**:
+![Order Management Order Subform Select](../99_images/business_automation/order_management/ordermanagement-order-subform-select.png) 11. Drag the `supplierInfo` process variable ontoo the canvas. In the pop-up form, set the `OrderManagement-SupplierInfo` form we just created as the **Nested Form**:
 
-![Order Management SupplierInfo Subform Select](../images/business_automation/order_management/ordermanagement-supplierinfo-subform-select.png)
+![Order Management SupplierInfo Subform Select](../99_images/business_automation/order_management/ordermanagement-supplierinfo-subform-select.png)
 
 ### Prepare Offer Form
 
@@ -510,15 +510,15 @@ Next, we will create the form for the `Prepare Offer` **User Task**.
 
 1. Create a new form. Provide the following details:
 
-    ![Create Prepare Offer Task Form](../images/business_automation/order_management/create-prepare-offer-task-form.png) 2. Our aim is to create a form that looks as such:
+    ![Create Prepare Offer Task Form](../99_images/business_automation/order_management/create-prepare-offer-task-form.png) 2. Our aim is to create a form that looks as such:
 
-![PrepareOffer Task Form](../images/business_automation/order_management/PrepareOffer-taskform.png)
+![PrepareOffer Task Form](../99_images/business_automation/order_management/PrepareOffer-taskform.png)
 
     3. As with the process start form, this user-task form operates on 2 variables, `orderInfo` and `supplierInfo`. And, as with the process start form, we need to create a data-object form for each of these variables. Technically, data-object forms for a certain data-object can be reused in multiple task-forms. However, creating a data-object form per task-form allows us to design these data-object forms aimed for that specific task.
 
-**PrepareOffer-OrderInfo** ![PrepareOffer OrderInfo](../images/business_automation/order_management/PrepareOffer-OrderInfo-form.png)
+**PrepareOffer-OrderInfo** ![PrepareOffer OrderInfo](../99_images/business_automation/order_management/PrepareOffer-OrderInfo-form.png)
 
-**PrepareOffer-SupplierInfo** ![PrepareOffer SupplierInfo](../images/business_automation/order_management/PrepareOffer-SupplierInfo-form.png)
+**PrepareOffer-SupplierInfo** ![PrepareOffer SupplierInfo](../99_images/business_automation/order_management/PrepareOffer-SupplierInfo-form.png)
 
 ---------------
 
@@ -526,17 +526,17 @@ Finally, we need to create the task form for the `Approve` task.
 
 1. Create a new form. Provide the following details.
 
-    ![Create Approve Task Form](../images/business_automation/order_management/create-approve-task-form.png) .
+    ![Create Approve Task Form](../99_images/business_automation/order_management/create-approve-task-form.png) .
 
 1. Our aim is create a form that looks like this:
 
-    ![Approve Task Form](../images/business_automation/order_management/Approve-taskform.png)
+    ![Approve Task Form](../99_images/business_automation/order_management/Approve-taskform.png)
 
 1. As with the other forms, this user-task form operates on 2 variables, `orderInfo`, `supplierInfo`. And, as with the other forms, we need to create a data-object form for each of these variables.
 
-**Approve-SupplierInfo** ![Approve SupplierInfo SupplierInfo](../images/business_automation/order_management/Approve-SupplierInfo-form.png)
+**Approve-SupplierInfo** ![Approve SupplierInfo SupplierInfo](../99_images/business_automation/order_management/Approve-SupplierInfo-form.png)
 
-**Approve-OrderInfo** ![Approve OrderInfo Form](../images/business_automation/order_management/Approve-OrderInfo-form.png)
+**Approve-OrderInfo** ![Approve OrderInfo Form](../99_images/business_automation/order_management/Approve-OrderInfo-form.png)
 
 **Don’t forget to save all your forms!!!**
 
@@ -559,25 +559,25 @@ In this section, you will execute the process deployed on the Process Execution 
 
 1. Navigate to **Menu → Manage → Process Definitions**. If everything is correct, the `order-management` process will be listed. Click on the kebab icon of the `order-management` process and click on **Start**.
 
-    ![Start Process](../images/business_automation/order_management/start-process.png)
+    ![Start Process](../99_images/business_automation/order_management/start-process.png)
 
 1. In the form that opens, pick the **Huawei P10 Phone** as the item and set the urgency to **low**. Set the target price to **700** and set the supplier name to the name of your own Business Central user (e.g. `bamAmdmin`). Click on **Submit**.
 
-    ![Start process form](../images/business_automation/order_management/start-process-form.png) 3. In the process instance details screen that opens, click on the **Diagram** tab to open the process instance diagram, which shows the current state of the process.
+    ![Start process form](../99_images/business_automation/order_management/start-process-form.png) 3. In the process instance details screen that opens, click on the **Diagram** tab to open the process instance diagram, which shows the current state of the process.
 
-![Start Process](../images/business_automation/order_management/process-instance-state-diagram-prepare.png)
+![Start Process](../99_images/business_automation/order_management/process-instance-state-diagram-prepare.png)
 
 1. The process is in a wait state at the `Prepare Offer` task. Navigateto **Menu → Track** Task Inbox\*\*. Click on the `Prepare Offer` task to open its task window.
 1. Click on the **Start** button to start working on the task. Because the task has been assigned to a single user (via \#{supplierInfo.user}), you don’t have to first *claim* the task.
-1. Select a random delivery date. Set the best offer to **900**. Click on **Complete**. ![Prepare Offer Complete Task](../images/business_automation/order_management/prepare-offer-complete-task.png)
+1. Select a random delivery date. Set the best offer to **900**. Click on **Complete**. ![Prepare Offer Complete Task](../99_images/business_automation/order_management/prepare-offer-complete-task.png)
 
 1. The process will continue to the `Auto Approve Order` decision node. Because of the target prices set, and the offered price, the decision will evaluale to `false`. Hence, the process will continue to the `Approve` task.
 
-![Start Process](../images/business_automation/order_management/process-instance-state-diagram-approve.png)
+![Start Process](../99_images/business_automation/order_management/process-instance-state-diagram-approve.png)
 
 1. Go back to the **Task Inbox** and open the `Approve` task. Click on **Claim** and on **Start**. In this form we can approve or disapprove the order via the **approved** checkbox, and specify a **rejection reason** if we reject the order. Approve the task by checking the **approved** checkbox and clicking on **Complete**:
 
-![Approve Complete Task](../images/business_automation/order_management/approve-complete-task.png)
+![Approve Complete Task](../99_images/business_automation/order_management/approve-complete-task.png)
 
 1. Go back to the process instance view and observe that the process instance is gone.
 
@@ -585,7 +585,7 @@ In this section, you will execute the process deployed on the Process Execution 
 
 1. Open the process instance, open it’s **Diagram** tab. Observe that the order has been accepted:
 
-![Process Instance Completed OrderAccepted](../images/business_automation/order_management/process-instance-completed-order-accepted.png)
+![Process Instance Completed OrderAccepted](../99_images/business_automation/order_management/process-instance-completed-order-accepted.png)
 
 Run a couple more process instances with different values to test, for example, the functionality of the `Automated Approval Rules`.
 
@@ -604,12 +604,12 @@ administrator would like to manually change the process to another statem for ex
 
 1. Although we have re-activated the `Prepare Offer` node, we have not yet de-activated the `Approve` task. Click on the active `Approve` task and expand the **Node Instances** section in the **Node Actions** panel. Click on the kebab icon of the active `Approve` instance and click on **Cancel**:
 
-   ![Cancel node](../images/business_automation/order_management/approve-node-cancel.png) 6. Open the **Task Inbox**. Observe that the `Approve` **User Task** is gone and that we have a new `Prepare Offer` task.
+   ![Cancel node](../99_images/business_automation/order_management/approve-node-cancel.png) 6. Open the **Task Inbox**. Observe that the `Approve` **User Task** is gone and that we have a new `Prepare Offer` task.
 
    - Open the `Prepare Offer` task, set the price to a price which will trigger the rules to automatically
      approve the order, and complete the task. . Go to the process instances view and observe that the process instance has been completed. . Enable the **Completed** filter in the **State** filter panel on the left-hand-side of the screen. Open the completed process instance and open its *Diagram* tab.
 
-   ![Process Instance Completed Order Accepted](../images/business_automation/order_management/corrected-process-instance-completed.png)
+   ![Process Instance Completed Order Accepted](../99_images/business_automation/order_management/corrected-process-instance-completed.png)
 
 ## Execute the process via APIs
 
@@ -624,7 +624,7 @@ The Swagger interface provides the description and documentation of the Executio
 
 3. Locate the **POST** operation for the resource `/server/containers/{containerId}/processes/{processId}/instances`. This is the RESTful operation with which we can start a new process instance. Expand the operation:
 
-    ![Swagger Start](../images/business_automation/order_management/start-process-instance-rest-operation.png)
+    ![Swagger Start](../99_images/business_automation/order_management/start-process-instance-rest-operation.png)
 
 4. Click on the **Try it out** button.
 
@@ -652,7 +652,7 @@ The Swagger interface provides the description and documentation of the Executio
          }
       ~~~
 
-       ![Process Instance Rest Request](../images/business_automation/order_management/send-new-process-instance-rest-request.png)
+       ![Process Instance Rest Request](../99_images/business_automation/order_management/send-new-process-instance-rest-request.png)
 
 6. Click on the *Execute* button.
 
@@ -672,7 +672,7 @@ The RESTful API provides many more operations. Let’s use the API to fetch our 
 
 4. Click on the **Execute** button. This will return all the tasks for our user (in the case of this example this is the `bamAdmin` user).
 
-![Get Task Instances Potential Owner](../images/business_automation/order_management/get-task-instances-potential-owner.png)
+![Get Task Instances Potential Owner](../99_images/business_automation/order_management/get-task-instances-potential-owner.png)
 
 1. We can see the `Prepare Offer` task that is available in our inbox. Let’s complete this task.
 

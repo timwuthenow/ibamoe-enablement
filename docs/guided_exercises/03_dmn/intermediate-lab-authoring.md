@@ -12,17 +12,17 @@ The problem statement describes a number of different inputs to our decision:
 
 Therefore, we should create two input nodes, one for each input:
 
-1. Add an **Input** node to the diagram by clicking on the **Input** node icon and placing it in the DRD. ![Input](../images/business_automation/dmn/add-drd-input-node.png){:width="600px"}
+1. Add an **Input** node to the diagram by clicking on the **Input** node icon and placing it in the DRD. ![Input](../99_images/business_automation/dmn/add-drd-input-node.png){:width="600px"}
 
 1. Double-click on the node to set the name. We will name this node `Age`.
 
 1. With the `Age` node selected, open the property panel. Set the **data type** to `number`.
 
-    ![data type](../images/business_automation/dmn/drd-input-node-propery-output-data-type.png){:width="600px"}
+    ![data type](../99_images/business_automation/dmn/drd-input-node-propery-output-data-type.png){:width="600px"}
 
 1. In the same way, create an **Input** node for `Years of Service`. This node should also have its **data type** set to `number`.
 
-    ![Nodes Complete](../images/business_automation/dmn/drd-decision-nodes-complete.png){:width="600px"}
+    ![Nodes Complete](../99_images/business_automation/dmn/drd-decision-nodes-complete.png){:width="600px"}
 
 1. Save the model.
 
@@ -32,7 +32,7 @@ The problem statement describes that every employee receives at least 22 days. S
 
 1. Add a **Decision** node to the DRD
 
-    ![Decision Node](../images/business_automation/dmn/add-drd-decision-node.png){:width="600px"}
+    ![Decision Node](../99_images/business_automation/dmn/add-drd-decision-node.png){:width="600px"}
 
 1. Give the node the name `Base Vacation Days`.
 
@@ -40,15 +40,15 @@ The problem statement describes that every employee receives at least 22 days. S
 
 1. Click on the node and click on the **Edit** icon to open the expression editor.
 
-    ![Edit Decision Node](../images/business_automation/dmn/drd-decision-node-edit.png){:width="600px"}
+    ![Edit Decision Node](../99_images/business_automation/dmn/drd-decision-node-edit.png){:width="600px"}
 
 1. In the expression editor, click on the box that says **Select expression** and select **Literal expression**.
 
-    ![Select Expression](../images/business_automation/dmn/select-expression.png){:width="600px"}
+    ![Select Expression](../99_images/business_automation/dmn/select-expression.png){:width="600px"}
 
 1. Simply set the **Literal Expression** to `22`, the number of base vacation days defined in the problem statement.
 
-    ![Select Expression](../images/business_automation/dmn/base-vacation-days-literal-expression.png){:width="600px"}
+    ![Select Expression](../99_images/business_automation/dmn/base-vacation-days-literal-expression.png){:width="600px"}
 
 1. Save the model.
 
@@ -68,13 +68,13 @@ Although these decisions could be implemented in a single decision node, we’ve
 
 1. We need to attach both input nodes, **Age** and **Years of Service** to all 3 decision nodes. We can do this by clicking on an Input node, clicking on its arrow icon, and attaching the arrow to the Decision node.
 
-    ![Select Expression](../images/business_automation/dmn/add-drd-three-decision-nodes.png){:width="600px"}
+    ![Select Expression](../99_images/business_automation/dmn/add-drd-three-decision-nodes.png){:width="600px"}
 
 1. Select the **Extra days case 1** node and open its expression editor by clicking on the **Edit** button.
 
 1. Select the expression **Decision Table** to create a boxed expression implemented as a decision table.
 
-    ![Select Expression](../images/business_automation/dmn/drd-decision-node-expression.png){:width="600px"}
+    ![Select Expression](../99_images/business_automation/dmn/drd-decision-node-expression.png){:width="600px"}
 
 1. The first case defines 2 decisions which can be modelled with 2 rows in our decision table as such:
 
@@ -82,19 +82,19 @@ Although these decisions could be implemented in a single decision node, we’ve
 
     1. employees with at least 30 years of service will receive 5 extra days
 
-    ![Select Expression](../images/business_automation/dmn/decision-table-case-1.png){:width="600px"}
+    ![Select Expression](../99_images/business_automation/dmn/decision-table-case-1.png){:width="600px"}
 
 1. To add new lines to your table, right click the first column and select "Insert below"
 
-    ![Select Expression](../images/business_automation/dmn/decision-table-new-1-new-line.png){:width="600px"}
+    ![Select Expression](../99_images/business_automation/dmn/decision-table-new-1-new-line.png){:width="600px"}
 
 1. Note that the **hit-policy** of the decision table is by default set to `U`, which means `Unique`. This implies that only one rule is expected to fire for a given input. In this case however, we would like to set it to `Collect Max`, as, for a given input, multiple decisions might match, but we would like to collect the output from the rule with the highest number of additional vacation days. To do this, click on the `U` in the upper-left corner of the decision table. Now, set the **Hit Policy** to `Collect` and the **Builtin Aggregator** to `MAX`.
 
-    ![Decision Table Hit Policy](../images/business_automation/dmn/decision-table-hit-policy.png){:width="600px"} 
+    ![Decision Table Hit Policy](../99_images/business_automation/dmn/decision-table-hit-policy.png){:width="600px"} 
 
 1. Finally, we need to set the default result of the decision. This is the result that will be returned when none of the rules match the given input. This is done as follows: .. Select the output/result column of the decision table. In this case this is the column `Extra days case 1` .. Open the properties panel on the right-side of the editor. .. Expand the **Default output** section. .. Set the `Default output property` to `0`. 
 
-    ![Decision Table Default Output](../images/business_automation/dmn/decision-table-default-output.png){:width="600px"} 
+    ![Decision Table Default Output](../99_images/business_automation/dmn/decision-table-default-output.png){:width="600px"} 
 
 1. Save the model
 
@@ -102,11 +102,11 @@ Although these decisions could be implemented in a single decision node, we’ve
 
     - Case 2:
 
-        ![Decision Table Case 2](../images/business_automation/dmn/decision-table-case-2.png){:width="600px"}
+        ![Decision Table Case 2](../99_images/business_automation/dmn/decision-table-case-2.png){:width="600px"}
 
     - Case 3:
 
-        ![Decision Table Case 3](../images/business_automation/dmn/decision-table-case-3.png){:width="600px"}
+        ![Decision Table Case 3](../99_images/business_automation/dmn/decision-table-case-3.png){:width="600px"}
 
 ## Total Vacation Days
 
@@ -116,7 +116,7 @@ The total vacation days needs to be determined from the base vacation days and t
 
 1. Connect the 4 existing Decision nodes to the node. This defines that the output of these nodes will be the input of the next node.
 
-    ![DRD Complete](../images/business_automation/dmn/drd-complete.png){:width="600px"}
+    ![DRD Complete](../99_images/business_automation/dmn/drd-complete.png){:width="600px"}
 
 1. Click on the `Total Vacation Days` node and click on **Edit** to open the expression editor. Configure the expression as a literal expression.
 
@@ -130,7 +130,7 @@ The total vacation days needs to be determined from the base vacation days and t
 
 1. The above logic can be implemented with the following FEEL expression:
 
-    ![Total Vacation Days Expression](../images/business_automation/dmn/total-vacation-days-expression.png){:width="600px"}
+    ![Total Vacation Days Expression](../99_images/business_automation/dmn/total-vacation-days-expression.png){:width="600px"}
 
 1. Save the completed model.
 

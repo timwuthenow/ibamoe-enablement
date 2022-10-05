@@ -31,7 +31,7 @@ We can deploy the project directly in KIE Server without the need to use Busines
      
 5. Click on the blue button "Execute". You should get a 201 result as follows:  
 
-  ![](../images/business_automation/tools/ks-deployment-result.png){:width="600px"}
+  ![](../99_images/business_automation/tools/ks-deployment-result.png){:width="600px"}
 
 ## Testing the Automated Approval Decision
 
@@ -68,8 +68,8 @@ Finally, you can import this project in Business Central. In order to do so, thi
 
 4. You should see the project. Select it and click the `Ok` button. 
 
-  ![](../images/business_automation/tools/bc-import.png){:width="600px"}
+  ![](../99_images/business_automation/tools/bc-import.png){:width="600px"}
 
 Feel free to explore the project and validate the test scenario and deployment through Business Central.
 
-  ![](../images/business_automation/tools/bc-project.png){:width="600px"}
+  ![](../99_images/business_automation/tools/bc-project.png){:width="600px"}

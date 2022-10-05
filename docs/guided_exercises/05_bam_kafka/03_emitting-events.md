@@ -13,7 +13,7 @@ In this setup we will:
 
 1. Convert the two *End Events* to *End Message Events*. It should look like this:
 
-  ![Prcoess definition with End Event as Messages](../images/business_automation/bam_kafka/bc-process-definition-step2.png){:width="600px"}
+  ![Prcoess definition with End Event as Messages](../99_images/business_automation/bam_kafka/bc-process-definition-step2.png){:width="600px"}
 
 1. Next, configure the Kafka topic name in the message name for both nodes as following:
 
@@ -22,7 +22,7 @@ In this setup we will:
 
         See below one of the nodes, the *Raise Denied* node configuration:
 
-        ![End Event Configuration](../images/business_automation/bam_kafka/bc-end-event-config.png){:width="600px"}
+        ![End Event Configuration](../99_images/business_automation/bam_kafka/bc-end-event-config.png){:width="600px"}
 
 1. Save the process definition.
 
@@ -30,7 +30,7 @@ In this setup we will:
 
 1. In Business Central, navigate to the **Project Settings -> Deployments -> Work Item handlers**:
 
-    ![Task Configuration](../images/business_automation/bam_kafka/bc-project-task-config.png){:width="600px"}
+    ![Task Configuration](../99_images/business_automation/bam_kafka/bc-project-task-config.png){:width="600px"}
 
 Observe that there is a task configured named `Send Task`. In {{ product.short }} {{ version }} you need this configuration to be able to use any `Message Events` (ending and throwing) that would emit events.
 
@@ -83,10 +83,10 @@ To test the solution, we will start a new process instance that will start, be a
 
 1. On the left column, filter by "Completed" State. You should see as many instances as the number of events you published on Kafka.
 
-    ![Filtered Process Instance View](../images/business_automation/bam_kafka/bc-process-instance-list-filtered.png){:width="600px"}
+    ![Filtered Process Instance View](../99_images/business_automation/bam_kafka/bc-process-instance-list-filtered.png){:width="600px"}
 
 1. Identify your process instance ID. In this example, instance with id **5**. Select the process instance.
 
 1. Next, select the tab `Diagram`. You should see something like:
 
-    ![Process Instance view](../images/business_automation/bam_kafka/bc-lab-two-process-instances.png){:width="600px"}
+    ![Process Instance view](../99_images/business_automation/bam_kafka/bc-lab-two-process-instances.png){:width="600px"}

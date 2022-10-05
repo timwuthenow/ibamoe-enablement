@@ -37,28 +37,28 @@ In the previous section, you setup Maven locally in your environment, so you sho
 
 4. From here we can see the workspace's contents and if we expand the contents of `/src/main` you will see the creation of several artifacts. Within `java` you will have a `GreetingResource.java` and within `resources` you will have an `application.properties` and `pricing.dmn` file. These are sample files that can be later modified or deleted, but we will be explore them first in this section, but will do more in later labs around the various end points.
 
-    ![VSCode Workspace Layout](../images/business_automation/introduction/workspace-layout.png)
+    ![VSCode Workspace Layout](../99_images/business_automation/introduction/workspace-layout.png)
 
 5. Let's first click the `pricing.dmn` file to open it. When you do so you may be greeted with a message similar to `This diagram does not have layout information. Click 'Yes' to compute optimal layout, it takes time according to the diagram size. Click 'No' to proceed without layuot. Please save the layout changes once diagram is opened.` - if so click `Yes` to automap the DMN locations.
 
-    ![Automatic Layout](../images/business_automation/introduction/automatic-layout.png)
+    ![Automatic Layout](../99_images/business_automation/introduction/automatic-layout.png)
 
 6. When the diagram opens you will see something similar to below, so we will start exploring it. The DMN is made up of two inputs *Age* and *Previous incidents?*, which are used to make the decision, *Base price*. 
 
-    ![DMN First view](../images/business_automation/introduction/workspace-layout.png)
+    ![DMN First view](../99_images/business_automation/introduction/workspace-layout.png)
 
 7. If you click *Age* and then click the *Properties* icon on the right, you will open a pane for the input.
 
-    ![DMN Properties](../images/business_automation/introduction/properties-open.png){:width="50%", :height="25%"}
+    ![DMN Properties](../99_images/business_automation/introduction/properties-open.png){:width="50%", :height="25%"}
 
 8. Within this pane, you can see information about the input *Age*, this includes that it is a number and what the input name is. More can be changed around this object, including changing the color of the node, font size, etc.
 
-    ![DMN Properties Expanded](../images/business_automation/introduction/properties-expanded.png){:width="40%", :height="30%"}
+    ![DMN Properties Expanded](../99_images/business_automation/introduction/properties-expanded.png){:width="40%", :height="30%"}
 
 9. To view the Decision, click the square decision node and select the `Edit` button to enter the decision for *Base Price*.
 
-    ![Edit DMN Decision](../images/business_automation/introduction/open-decision.png){:width="50%", :height="25%"}
+    ![Edit DMN Decision](../99_images/business_automation/introduction/open-decision.png){:width="50%", :height="25%"}
 
 10. From here you will see the Decision Table that is associated with the Base Price decision. From here you will see two (2) input columns (`Age` and `Previous Incidents`), as well as one output column (`Base price`) all with their types below them. These types are controlled from the properties panel similarly to how they were opened when looking at `Age` a few steps ago. This decision has 4 different rows that could fire, with a Hit Policy of `UNIQUE` signified by the **U** in the top left corner of the table. A decision writer could make any comments they want to the table and have them saved towards the decision here
 
-    ![Viewing DMN Decision](../images/business_automation/introduction/dt-stable.png)
+    ![Viewing DMN Decision](../99_images/business_automation/introduction/dt-stable.png)

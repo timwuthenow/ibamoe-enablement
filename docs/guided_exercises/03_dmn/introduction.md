@@ -50,26 +50,26 @@ The DMN Editor consists of a number of components:
 
 - **Data Types**: allows the user to define (complex) datatypes.
 
-![DRD](../images/business_automation/dmn/dmn-editor-components.jpg){:width="600px"}
+![DRD](../99_images/business_automation/dmn/dmn-editor-components.jpg){:width="600px"}
 
-![Boxed Expressions](../images/business_automation/dmn/dmn-editor-decision-table.jpg){:width="600px"}
+![Boxed Expressions](../99_images/business_automation/dmn/dmn-editor-decision-table.jpg){:width="600px"}
 
-![Data Types](../images/business_automation/dmn/dmn-editor-datatypes.jpg){:width="600px"}
+![Data Types](../99_images/business_automation/dmn/dmn-editor-datatypes.jpg){:width="600px"}
 
-# Guided Labs 
+## Guided Labs
 
 These are the labs you have available in this workshop:
 
 - Insurance Price calculation: a getting started exercise. You will import an existing module, explore it, deploy it and test it using the decision engine's REST API.
 
-	![Pricing DRD](../images/business_automation/dmn/insurance-price-drd.png){:width="600px"}
+    ![Pricing DRD](../99_images/business_automation/dmn/insurance-price-drd.png){:width="600px"}
 
 - Vacation Days: an intermediate level exercise. You will author a model from scratch, use decision tables, work with different hit policies, different FEEL constructs and expressions. Finally, you will deploy it and test it using not only the decision engine's REST API but also the Java KIE Client API.
 
-    ![DRD Complete](../images/business_automation/dmn/drd-complete.png){:width="600px"}
+    ![DRD Complete](../99_images/business_automation/dmn/drd-complete.png){:width="600px"}
 
 - Call Centre: an advanced level exercise. You will author a model from scratch, create data types, consume DMN decision services from within decision nodes, and more FEEL constructs and expressions. Finally, you will deploy it and test it using not only the decision engine's REST API but also the Java KIE Client API.
 
-	![Decision Service Knowledge Requirement](../images/business_automation/dmn/decision-service-knowledge-requirement.png){:width="800px"}
+    ![Decision Service Knowledge Requirement](../99_images/business_automation/dmn/decision-service-knowledge-requirement.png){:width="800px"}
 
 These are independent guided exercises and you don't need to implement the previous use case to implement the next one.

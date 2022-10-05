@@ -8,13 +8,13 @@ To install the extension in VSCode, open the extensions menu, and search for Bus
 
 You should find the Red Hat Business Automation Bundle.
 
-![](../images/business_automation/tools/vscode-install-extension.png){:width="600px"}
+![](../99_images/business_automation/tools/vscode-install-extension.png){:width="600px"}
 
 Click on install.
 
 If this is the first time you are using VSCode, it would be interesting to also install the `code` command in path, so that you can open projects directly from the terminal. To do so, press `cmd+shift+p` (or `ctrl+shift+p`) to launch `VSCode Quick Open` menu. And next, search for **Instal code command in PATH**:
 
-![](../images/business_automation/tools/vscode-install-code-path.png){:width="600px"}
+![](../99_images/business_automation/tools/vscode-install-code-path.png){:width="600px"}
 
 ## Create new a project
 
@@ -22,7 +22,7 @@ Let's create a new project using the maven archetype. This project should contai
 
 1. Now we will use the terminal. You can either use your terminal or use the built-in terminal In VScode. To use the terminal in VSCode you can press `cmd+shift+p` (or `ctrl+shift+p`) to launch `VSCode Quick Open` menu. And next, open a `new intergrated terminal`:
 
-![](../images/business_automation/tools/vscode-integrated-terminal.png){:width="600px"}
+![](../99_images/business_automation/tools/vscode-integrated-terminal.png){:width="600px"}
 
 2. Next, in the terminal navigate to the directory where you would like to create the new project. Let's call it $PROJECT_DIR from now on. Create a new folder named `tooling-labs`.
 
@@ -41,13 +41,13 @@ mvn archetype:generate \
     -DarchetypeVersion=7.67.0.Final-redhat-00008
 ~~~
 
-![](../images/business_automation/tools/vscode-new-project.png){:width="600px"}
+![](../99_images/business_automation/tools/vscode-new-project.png){:width="600px"}
 
 **TIP:** If you need to create a case project, you can use the parameter `-DcaseProject=true`. 
 
 1. Maven will download the libraries, and once it finishes, it will confirm if you want to create the project using the default GAV (group:artifact:version). Type "Y" and press enter.
 
-![](../images/business_automation/tools/vscode-new-project-onfirm.png){:width="600px"}
+![](../99_images/business_automation/tools/vscode-new-project-onfirm.png){:width="600px"}
 
 5. You should get a new project named `mybusinessapp`. If you are in VSCode built-in terminal, you can open the project with:
 
