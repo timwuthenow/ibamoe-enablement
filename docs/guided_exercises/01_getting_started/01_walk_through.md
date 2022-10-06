@@ -7,7 +7,7 @@ In the previous section, you setup Maven locally in your environment, so you sho
     ~~~ shell
     mvn io.quarkus:quarkus-maven-plugin:create \
         -DprojectGroupId=com.ibm.sample -DprojectArtifactId=quick-kogito \
-        -DprojectVersion=1.0.0-SNAPSHOT -Dextensions=kogito-quarkus,dmn,resteasy-reactive-jackson,quarkus-smallrye-openapi
+        -DprojectVersion=1.0.0-SNAPSHOT -Dextensions=kogito-quarkus,dmn,resteasy-reactive-jackson,quarkus-smallrye-openapi,quarkus-smallrye-health
     ~~~
 
 2. When you create this project you should get a bunch of Maven artifacts start to stream in your console that are being pulled and ultimately are left with a console message like the below:
@@ -43,7 +43,7 @@ In the previous section, you setup Maven locally in your environment, so you sho
 
     ![Automatic Layout](../99_images/business_automation/introduction/automatic-layout.png)
 
-6. When the diagram opens you will see something similar to below, so we will start exploring it. The DMN is made up of two inputs *Age* and *Previous incidents?*, which are used to make the decision, *Base price*. 
+6. When the diagram opens you will see something similar to below, so we will start exploring it. The DMN is made up of two inputs *Age* and *Previous incidents?*, which are used to make the decision, *Base price*.
 
     ![DMN First view](../99_images/business_automation/introduction/workspace-layout.png)
 
