@@ -30,9 +30,9 @@ Within this lab you will see how you can use OpenShift Pipelines (a.k.a Tekton) 
 
 ## Installing on OpenShift
 
-1. Fork this repository, in jbossdemocentral.
+1. Fork this repository, [to get started](https://github.com/timwuthenow/business-automation-cicd-showcase.git).
 
-   ![Fork project](support/docs/images/github-fork-project.png?raw=true "Fork project")
+   ![Fork project](../99_images/business_automation/cicd/github-fork-project.png?raw=true "Fork project")a
 2. Clone your fork to your local machine.
 
    ~~~ shell
@@ -64,18 +64,21 @@ http://decision-service-webclient-rhdm-kieserver-cicd.apps.cluster- (...)
 
 1. To configure the webhook for automated deployment, open your fork in your GitHub. Next, add a new webhook by opening "**Settings** -> **Webhook** -> **Add webhook** button".
 
-   ![Add GitHub webhook](support/docs/images/github-new-webhook.png?raw=true "Add GitHub webhook")
+   ![Add GitHub webhook](../99_images/business_automation/cicd/github-new-webhook.png)
 
-1. Fill the form with the information below:
+2. Fill the form with the information below:
    1. **Payload URL**:  provided after the provisioning. You can also get it using the command:
+    {% raw %}
 
     ~~~shell
-     echo "$(oc  get route el-ba-cicd-event-listener --template='http://{{.spec.host}}')"
+    echo "$(oc  get route el-ba-cicd-event-listener) 'http://{{.spec.host}}')"
     ~~~
 
-   1. **Content type**: `application/json`
-   1. **Secret**: empty
-   1. **Which events would you like to trigger this webhook?**: `Just the push event`.
+    {% endraw %}
+
+   2. **Content type**: `application/json`
+   3. **Secret**: empty
+   4. **Which events would you like to trigger this webhook?**: `Just the push event`.
 
 At this point, you should already have a fully automated integration and deployment lifecycle for the business application. Any changes pushed to your repository will trigger the pipeline in your OpenShift cluster.
 
@@ -93,25 +96,34 @@ If you run this test, a new deployment should be triggered. The pipeline will de
    ~~~
 
 3. In OpenShift, access: "**Pipelines** -> **ba-cicd-pipeline** -> **Pipeline Runs** " and check the progress of your application deployment.
-    ![Pipeline progress](support/docs/images/ocp-demo-pipeline-run.png?raw=true "Pipeline progress")
+    ![Pipeline progress](../99_images/business_automation/cicd/ocp-demo-pipeline-run.png?raw=true "Pipeline progress")
 
 ## Using the web application
 
 The web application allows you to interact with the deployed rules and decisions in a specific Decision Server (KieServer or Kogito runtime). To use the deployed web app to interact with the deployed decisions, first you need to set the KIE Server URL in the web app settings.
 
 1. The deployed decision service is now deployed and accessible. Get your deployed KIE Server route. You can use the command:
+    {%raw%}
 
-   `echo "http://"$(oc get route business-application-service-route -n rhdm-kieserver-cicd | awk 'FNR > 1 {print $2}')"/rest/server"`
+    ~~~shell
+    echo "http://"$(oc get route business-application-service-route -n rhdm-kieserver-cicd | awk 'FNR > 1 {print $2}')"/rest/server"
+    ~~~
+
+    {%endraw%}
 
 2. Open your web application. The URL was provided in the installation step. If you lost it, use the command
+   {%raw%}
 
-   `oc get route decision-service-webclient --template='http://{{.spec.host}}' -n rhdm-kieserver-cicd`
+   ~~~shell
+   oc get route decision-service-webclient --template='http://{{.spec.host}}' -n rhdm-kieserver-cicd
+   ~~~
 
+   {%endraw%}
 3. In the web application, click on the settings icon on the top right corner. In the field `Kie Server Base URL`, insert KIE Server URL.
 4. You can use the "Test Connection" button to validate the communication between the two services, then Save.
 5. You should be able to test the available decisions and rules.
 
-![Decision Result in Web app](support/docs/images/webapplication-dmn-result.png?raw=true "Decision Result in Web app")
+![Decision Result in Web app](../99_images/business_automation/cicd/webapplication-dmn-result.png?raw=true "Decision Result in Web app")
 
 With this, the whole demo is now set up and ready to use.
 
