@@ -14,6 +14,7 @@ hide:
 ## {{ product.name }} Decision Manager Exercises
 
 [Learn DMN :octicons-rocket-24:](guided_exercises/03_dmn/introduction.md){ .md-button }
+[Learn CI/CD :octicons-git-compare-24:](guided_exercises/03c_CICD/introduction.md) { .md-button }
 
 ## {{ product.name }} Process Automation Exercises
 
