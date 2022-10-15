@@ -30,19 +30,19 @@ Now that we have seen a little of the DMN Decision, let's use the combined power
     OS name: "mac os x", version: "12.6", arch: "aarch64", family: "mac"
     ~~~
 
-2. Now that our environment is has the appropriate resources, let's build and run the service locally. Quarkus does this very simply with the command `mvn quarkus:dev` which will operate the container in development mode. By default it will run on 2 ports when running this command, `8080` and `5005`. These ports can be maintained in the `application.properties` file in `src/main/resources/` or you can modify the `mvn quarkus:dev` command to load those properties from the command line. If you want to do the command line, you can do `mvn quarkus:dev -Dquarkus.http.port=8085 -Ddebug=7007` which would setup your application to run off of port `8085` and be able to attach a remote debugger at `7007`. To change the default host in application.properties add the following line.
+1. Now that our environment is has the appropriate resources, let's build and run the service locally. Quarkus does this very simply with the command `mvn quarkus:dev` which will operate the container in development mode. By default it will run on 2 ports when running this command, `8080` and `5005`. These ports can be maintained in the `application.properties` file in `src/main/resources/` or you can modify the `mvn quarkus:dev` command to load those properties from the command line. If you want to do the command line, you can do `mvn quarkus:dev -Dquarkus.http.port=8085 -Ddebug=7007` which would setup your application to run off of port `8085` and be able to attach a remote debugger at `7007`. To change the default host in application.properties add the following line.
 
     ~~~java
     quarkus.http.port=8085
     ~~~
 
-3. After the project's application.properties has been updated, let's start the Quarkus service by running the following command. This command will run the remote debugger (which we are not using in these labs) on port 6006 so that if you already have another application running on 5005 (the default port) it won't give an error.
+1. After the project's application.properties has been updated, let's start the Quarkus service by running the following command. This command will run the remote debugger (which we are not using in these labs) on port 6006 so that if you already have another application running on 5005 (the default port) it won't give an error.
 
     ~~~shell
     mvn quarkus:dev -Ddebug=6006
-    ~~~~
+    ~~~
 
-4. When the service is ready, it will produce a log similar to the below:
+1. When the service is ready, it will produce a log similar to the below:
 
     ~~~log
     $ quick-kogito % mvn quarkus:dev -Ddebug=6006
@@ -67,3 +67,7 @@ Now that we have seen a little of the DMN Decision, let's use the combined power
     2022-09-29 20:48:35,728 INFO  Profile dev activated. Live Coding activated.
     2022-09-29 20:48:35,728 INFO  Installed features: [cdi, kogito-decisions, kogito-predictions, kogito-processes, kogito-rules, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
     ~~~
+
+## Using the project that is created
+
+Now that your application is created, you can start using it for development.

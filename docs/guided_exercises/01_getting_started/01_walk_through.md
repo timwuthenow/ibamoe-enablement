@@ -39,7 +39,7 @@ In the previous section, you setup Maven locally in your environment, so you sho
 
     ![VSCode Workspace Layout](../99_images/business_automation/introduction/workspace-layout.png)
 
-5. Let's first click the `pricing.dmn` file to open it. When you do so you may be greeted with a message similar to `This diagram does not have layout information. Click 'Yes' to compute optimal layout, it takes time according to the diagram size. Click 'No' to proceed without layuot. Please save the layout changes once diagram is opened.` - if so click `Yes` to automap the DMN locations.
+5. Let's first click the `pricing.dmn` file to open it. When you do so you may be greeted with a message similar to `This diagram does not have layout information. Click 'Yes' to compute optimal layout, it takes time according to the diagram size. Click 'No' to proceed without layout. Please save the layout changes once diagram is opened.` - if so click `Yes` to automap the DMN locations.
 
     ![Automatic Layout](../99_images/business_automation/introduction/automatic-layout.png)
 

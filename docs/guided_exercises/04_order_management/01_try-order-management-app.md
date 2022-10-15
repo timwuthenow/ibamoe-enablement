@@ -98,31 +98,42 @@ For this hello world, let's use Business Central process and task management cap
 
 1. In Business Central, let's open the Menu in the top bar and navigate to "Process Definitions"
     ![Open Process Definitions](../99_images/business_automation/order_management/01_try/pam-hw-13.png)
+
 1. We can see three different process definitions. We'll start a new process instance based on the "order-management" process. Click on the actions kebab, and select "Start"
     ![Start Process Instance](../99_images/business_automation/order_management/01_try/pam-hw-14.png)
+
 1. The form that opened is also part of our business process and we can customize it if needed. For now, let's just fill in the data required to start our process instance, and click the "Submit" button.
    * Item Name: Laptop Dell XPS 15
    * Urgency: Medium
     ![Create instance](../99_images/business_automation/order_management/01_try/pam-hw-15.png)
-1. A new process instance will start in the engine. In order to visualize the current status, click on "Diagram".
+
+4. A new process instance will start in the engine. In order to visualize the current status, click on "Diagram".
     ![View diagram](../99_images/business_automation/order_management/01_try/pam-hw-16.png)
-1. Notice we currently have a Human Task named "Request Offer" waiting for human intervention. Now, let's work on this task. In the Menu, access the "Task Inbox":
+
+5. Notice we currently have a Human Task named "Request Offer" waiting for human intervention. Now, let's work on this task. In the Menu, access the "Task Inbox":
     ![Task Inbox](../99_images/business_automation/order_management/01_try/pam-hw-17.png)
-1. In the list you should see a list of tasks you have permission to see and work on. Let's claim the Request Offer task to our user, and start working on it. Click on the kebab and select the "Claim and Work" option: 
+
+6. In the list you should see a list of tasks you have permission to see and work on. Let's claim the Request Offer task to our user, and start working on it. Click on the kebab and select the "Claim and Work" option: 
     ![Claim and work](../99_images/business_automation/order_management/01_try/pam-hw-18.png)
-1. You'll see the task data available for your analysis, as a knowledge worker - someone responsible for executing the task. 
-1. Click on the blue "Start" button to start working on the task.Based on this offer, we'll define our reply. Inform the following data and click on the blue "Complete" button:
+
+7. You'll see the task data available for your analysis, as a knowledge worker - someone responsible for executing the task.
+
+8. Click on the blue "Start" button to start working on the task.Based on this offer, we'll define our reply. Inform the following data and click on the blue "Complete" button:
    * Category : optional
    * Target Price: 250
    * Suplier list: supplier 1
     ![Work task](../99_images/business_automation/order_management/01_try/pam-hw-19.png)
-1. According to our process, a new task will be created for the suppliers. The supplier should provide an offer - so let's do it. Still on the task list, claim and work the task "Prepare Offer":
+
+9.  According to our process, a new task will be created for the suppliers. The supplier should provide an offer - so let's do it. Still on the task list, claim and work the task "Prepare Offer":
     ![Work prepare offer](../99_images/business_automation/order_management/01_try/pam-hw-20.png)
-1. Click "Start" blue button, inform any date, and the best offer as **1000**. Click on complete.
+
+10. Click "Start" blue button, inform any date, and the best offer as **1000**. Click on complete.
     ![Best offer](../99_images/business_automation/order_management/01_try/pam-hw-21.png)
-1. At this point, the automatic approval was already taken, and our request was not automatically approved. You can confirm this by visualizing the process instance. On the kebab, select "View Process"
+
+11. At this point, the automatic approval was already taken, and our request was not automatically approved. You can confirm this by visualizing the process instance. On the kebab, select "View Process"
     ![View process](../99_images/business_automation/order_management/01_try/pam-hw-22.png)
-1. You'll be redirected to the list of process instances. Select the process instance with id 1, and then, choose the "Diagram" option:
+
+12. You'll be redirected to the list of process instances. Select the process instance with id 1, and then, choose the "Diagram" option:
     ![Diagram](../99_images/business_automation/order_management/01_try/pam-hw-23.png)
 
 At this point, you have learned how you manage processes and tasks using Business Central. You know how to start new process instances, how to interact with the process tasks and how to complete them.
