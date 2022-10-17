@@ -183,30 +183,39 @@ In this section we will create a simple Java client for our DMN model.
 
 1. Before we implement our method, we first define a number of constants that we will need when implementing our method (note that the values of your constants can be different depending on your environment, model namespace, etc.):
 
-   ~~~java
+    ~~~java
      private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
      private static final String CONTAINER_ID = "vacation-days-decisions"; 
      private static final String USERNAME = "bamAdmin"; 
      private static final String PASSWORD = "ibmpam1!"; 
-   ~~~
+    ~~~
+
+    > 📘 INFO: If you're using the Linux environment on Skytap use the following.
+
+     ~~~java
+     private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
+     private static final String CONTAINER_ID = "vacation-days-decisions"; 
+     private static final String USERNAME = "pamadmin"; 
+     private static final String PASSWORD = "pamadm1n"; 
+    ~~~
 
 1. KIE-Server client API classes can mostly be retrieved from the `KieServicesFactory` class. We first need to create a `KieServicesConfiguration` instance that will hold our credentials and defines how we want our client to communicate with the server:
 
-   ~~~java
-   KieServicesConfiguration kieServicesConfig = KieServicesFactory.newRestConfiguration(KIE_SERVER_URL, new EnteredCredentialsProvider(USERNAME, PASSWORD)); 
-   ~~~
+    ~~~java
+    KieServicesConfiguration kieServicesConfig = KieServicesFactory.newRestConfiguration(KIE_SERVER_URL, new EnteredCredentialsProvider(USERNAME, PASSWORD)); 
+    ~~~
 
 1. Next, we create the `KieServicesClient`:
 
-   ~~~java
-   KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig); 
-   ~~~
+    ~~~java
+    KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig); 
+    ~~~
 
 1. From this client we retrieve our DMNServicesClient: 
 
-   ~~~java
-   DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class); 
-   ~~~
+    ~~~java
+    DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class); 
+    ~~~
 
 1. To pass the input values to our model to the Execution Server, we need to create a `DMNContext`: 
 
@@ -229,53 +238,52 @@ In this section we will create a simple Java client for our DMN model.
 
 1. Compile your project and run it. Observe the output in the console, which should say: **Total vacation days: 27**
 
-The complete project can be found here: <https://github.com/kmacedovarela/dmn-workshop-labs/tree/master/vacation-days-dmn-lab-client>
-<details><summary>Main.java Client for consuming DMN</summary><blockquote>
+    The complete project can be found [here](https://github.com/kmacedovarela/dmn-workshop-labs/tree/master/vacation-days-dmn-lab-client)
 
-~~~java
-package org.kie.dmn.lab;
-
-import org.kie.api.builder.KieScannerFactoryService;
-import org.kie.api.internal.weaver.KieWeaverService;
-import org.kie.dmn.api.core.DMNContext;
-import org.kie.dmn.api.core.DMNDecisionResult;
-import org.kie.dmn.api.core.DMNResult;
-import org.kie.server.api.model.ServiceResponse;
-import org.kie.server.client.CredentialsProvider;
-import org.kie.server.client.DMNServicesClient;
-import org.kie.server.client.KieServicesClient;
-import org.kie.server.client.KieServicesConfiguration;
-import org.kie.server.client.KieServicesFactory;
-import org.kie.server.client.credentials.EnteredCredentialsProvider;
-
-/**
- * Vacation Days DMN Client
- */
-public class Main {
-
-    private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server";
-
-    private static final String CONTAINER_ID = "vacation-days-decisions";
-
-    private static final String USERNAME = "bamAdmin";
-
-    private static final String PASSWORD = "ibmpam1!";
-
-    public static void main(String[] args) {
-        CredentialsProvider credentialsProvider = new EnteredCredentialsProvider(USERNAME, PASSWORD);
-        KieServicesConfiguration kieServicesConfig = KieServicesFactory.newRestConfiguration(KIE_SERVER_URL, credentialsProvider);
-        KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig);
-
-        DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class);
-
-        DMNContext dmnContext = dmnServicesClient.newContext();
-        dmnContext.set("Age", 16);
-        dmnContext.set("Years of Service", 1);
-
-        ServiceResponse<DMNResult> dmnResultResponse = dmnServicesClient.evaluateAll(CONTAINER_ID, dmnContext);
-
-        DMNDecisionResult decisionResult = dmnResultResponse.getResult().getDecisionResultByName("Total Vacation Days");
-        System.out.println("Total vacation days: " + decisionResult.getResult());
+    ~~~java
+    package org.kie.dmn.lab;
+    
+    import org.kie.api.builder.KieScannerFactoryService;
+    import org.kie.api.internal.weaver.KieWeaverService;
+    import org.kie.dmn.api.core.DMNContext;
+    import org.kie.dmn.api.core.DMNDecisionResult;
+    import org.kie.dmn.api.core.DMNResult;
+    import org.kie.server.api.model.ServiceResponse;
+    import org.kie.server.client.CredentialsProvider;
+    import org.kie.server.client.DMNServicesClient;
+    import org.kie.server.client.KieServicesClient;
+    import org.kie.server.client.KieServicesConfiguration;
+    import org.kie.server.client.KieServicesFactory;
+    import org.kie.server.client.credentials.EnteredCredentialsProvider;
+    
+    /**
+     * Vacation Days DMN Client
+     */
+    public class Main {
+    
+        private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server";
+    
+        private static final String CONTAINER_ID = "vacation-days-decisions";
+    
+        private static final String USERNAME = "bamAdmin";
+    
+        private static final String PASSWORD = "ibmpam1!";
+    
+        public static void main(String[] args) {
+            CredentialsProvider credentialsProvider = new EnteredCredentialsProvider(USERNAME, PASSWORD);
+            KieServicesConfiguration kieServicesConfig = KieServicesFactory.newRestConfiguration(KIE_SERVER_URL, credentialsProvider);
+            KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig);
+    
+            DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class);
+    
+            DMNContext dmnContext = dmnServicesClient.newContext();
+            dmnContext.set("Age", 16);
+            dmnContext.set("Years of Service", 1);
+    
+            ServiceResponse<DMNResult> dmnResultResponse = dmnServicesClient.evaluateAll(CONTAINER_ID, dmnContext);
+    
+            DMNDecisionResult decisionResult = dmnResultResponse.getResult().getDecisionResultByName("Total Vacation Days");
+            System.out.println("Total vacation days: " + decisionResult.getResult());
+        }
     }
-}
-~~~
+    ~~~

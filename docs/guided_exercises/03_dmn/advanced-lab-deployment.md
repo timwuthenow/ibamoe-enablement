@@ -38,6 +38,8 @@ The Swagger interface provides the description and documentation of the Executio
 
 1. The response will be the model-description of your DMN model.
 
+## Evaluate the Model
+
 Next, we will evaluate our model with some input data. We need to provide our model with the **incoming call**, **list of employees** and **office location**.
 
 1. Expand the `POST` operation and click on the **Try it out** button
@@ -85,14 +87,14 @@ In this section we will create a simple Java client for our DMN model.
 
 1. Add the following dependency to your project:
 
-   ~~~xml
+    ~~~xml
     <dependency> 
       <groupId>org.kie.server</groupId> 
       <artifactId>kie-server-client</artifactId> 
       <version>{{ product.gav }}</version> 
     <scope>compile</scope> 
     </dependency> 
-   ~~~
+    ~~~
 
 1. Create a Java package in your `src/main/java` folder with the name `org.kie.dmn.lab`.
 
@@ -102,14 +104,25 @@ In this section we will create a simple Java client for our DMN model.
 
 1. Before we implement our method, we first define a number of constants that we will need when implementing our method (note that the values of your constants can be different depending on your environment, model namespace, etc.):
 
-   ~~~java
-   private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
-   private static final String CONTAINER_ID = "call-centre-decisions"; 
-   private static final String USERNAME = "bamAdmin"; 
-   private static final String PASSWORD = "ibmpam1!"; 
-   private static final String DMN_MODEL_NAMESPACE = "https://kiegroup.org/dmn/_2E9DCCE2-8C2B-496E-AC37-103694E51940";
-   private static final String DMN_MODEL_NAME = "call-centre";
-   ~~~
+    ~~~java
+    private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
+    private static final String CONTAINER_ID = "call-centre-decisions"; 
+    private static final String USERNAME = "bamAdmin"; 
+    private static final String PASSWORD = "ibmpam1!"; 
+    private static final String DMN_MODEL_NAMESPACE = "https://kiegroup.org/dmn/_2E9DCCE2-8C2B-496E-AC37-103694E51940";
+    private static final String DMN_MODEL_NAME = "call-centre";
+    ~~~
+
+    > 📘 INFO: If you're using the Linux environment on Skytap use the following.
+
+    ~~~java
+    private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
+    private static final String CONTAINER_ID = "call-centre-decisions"; 
+    private static final String USERNAME = "pamadmin"; 
+    private static final String PASSWORD = "pamadm1n"; 
+    private static final String DMN_MODEL_NAMESPACE = "https://kiegroup.org/dmn/_2E9DCCE2-8C2B-496E-AC37-103694E51940";
+    private static final String DMN_MODEL_NAME = "call-centre";
+    ~~~
 
 1. KIE-Server client API classes can mostly be retrieved from the `KieServicesFactory` class. We first need to create a `KieServicesConfiguration` instance that will hold our credentials and defines how we want our client to communicate with the server:
 
@@ -121,15 +134,15 @@ In this section we will create a simple Java client for our DMN model.
 
 1. Next, we create the `KieServicesClient`:
 
-   ~~~java
-   KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig);
-   ~~~
+    ~~~java
+    KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig);
+    ~~~
 
 1. From this client we retrieve our DMNServicesClient:
 
-   ~~~java
-   DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class);
-   ~~~
+    ~~~java
+    DMNServicesClient dmnServicesClient = kieServicesClient.getServicesClient(DMNServicesClient.class);
+    ~~~
 
 1. To pass the input values to our model to the Execution Server, we need to create a `DMNContext`:
 

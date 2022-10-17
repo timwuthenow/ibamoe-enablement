@@ -666,6 +666,8 @@ The Swagger interface provides the description and documentation of the Executio
 
 1. If requested, provide the username and password of your **Business Central** and **KIE-Server** user (in this example we have been using u: `bamAdmin`, p:`ibmpam1!`).
 
+    > 📘 INFO: If you're using the Linux environment on Skytap use the *pamadmin:pamadm1n* information
+
 1. Inspect the response. Note that the operation returns the process instance id of the started process.
 
 1. Go back to the Business Central workbench. Go the process instances view and inspect the process instance we have just started.
@@ -705,6 +707,20 @@ The RESTful API provides many more operations. Let’s use the API to fetch our 
       "supplierInfo": {
             "com.myspace.order\_management.SupplierInfo" : { 
           "user": "bamAdmin", 
+              "offer": "900", 
+          "deliveryDate":"2020-03-11T12:00:00.000Z" 
+            } 
+          } 
+        }
+    ~~~
+
+    > 📘 INFO: If you're using the Linux environment on Skytap use the following.
+
+    ~~~json
+        { 
+      "supplierInfo": {
+            "com.myspace.order\_management.SupplierInfo" : { 
+          "user": "pamadmin", 
               "offer": "900", 
           "deliveryDate":"2020-03-11T12:00:00.000Z" 
             } 
@@ -753,6 +769,16 @@ In this section we will create a simple Java client for our Order Management pro
     private static final String PROCESS_ID = "order-management.OrderManagement";
     ~~~
 
+    > 📘 INFO: If you're using the Linux environment on Skytap use the following.
+
+    ~~~java
+    private static final String KIE_SERVER_URL = "http://localhost:8080/kie-server/services/rest/server"; 
+    private static final String CONTAINER_ID = "order-management"; 
+    private static final String USERNAME = "pamadmin"; 
+    private static final String PASSWORD = "pamadm1n"; 
+    private static final String PROCESS_ID = "order-management.OrderManagement";
+    ~~~
+
 1. KIE-Server client API classes can mostly be retrieved from the `KieServicesFactory` class. We first need to create a `KieServicesConfiguration` instance that will hold our credentials and defines how we want our client to communicate with the server:
 
     ~~~java
@@ -768,19 +794,19 @@ In this section we will create a simple Java client for our Order Management pro
     kieServicesConfig.addExtraClasses(extraClasses);
     ~~~
 
-1.  Next, we create the `KieServicesClient`:
+1. Next, we create the `KieServicesClient`:
 
     ~~~java
     KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfig);
-    ~~~
+   ~~
 
-10. From this client we retrieve our `ProcessServicesClient`:
+1. From this client we retrieve our `ProcessServicesClient`:
 
     ~~~java
     ProcessServicesClient processServicesClient = kieServicesClient.getServicesClient(ProcessServicesClient.class);
     ~~~
 
-11. We now create a `Map` which we will use to pass the process input variables. We create a new `OrderInfo` instance and `SupplierInfo` instance and put them in the `Map`.
+1. We now create a `Map` which we will use to pass the process input variables. We create a new `OrderInfo` instance and `SupplierInfo` instance and put them in the `Map`.
 
     ~~~java
     Map<String, Object>inputData = new HashMap<>();
@@ -793,19 +819,32 @@ In this section we will create a simple Java client for our Order Management pro
     supplierInfo.setUser("bamAdmin"); inputData.put("supplierInfo", supplierInfo); 
     ~~~
 
-12. We can now start a new process instance via the `ProcessServicesClient`.
+    > 📘 INFO: If you're using the Linux environment on Skytap use *pamadmin*:*pamadm1n* as the username password
+
+    ~~~java
+    Map<String, Object>inputData = new HashMap<>();
+    OrderInfo orderInfo = new OrderInfo();
+    orderInfo.setItem("Huawei P10");
+    orderInfo.setUrgency("low");
+    inputData.put("orderInfo", orderInfo);
+    
+    SupplierInfo supplierInfo = new SupplierInfo();
+    supplierInfo.setUser("pamadmin"); inputData.put("supplierInfo", supplierInfo); 
+    ~~~
+
+1. We can now start a new process instance via the `ProcessServicesClient`.
 
     ~~~java
     Long processInstanceId = processServicesClient.startProcess(CONTAINER_ID, PROCESS_ID, inputData);
     ~~~
 
-13. Finally, we can print the process instance id to `System.out`.
+1. Finally, we can print the process instance id to `System.out`.
 
     ~~~java
     System.out.println("New *Order Management* process instance started with instance-id: " + processInstanceId); 
     ~~~
 
-14. Compile your project and run it. Observe the output in the console, which should say: **New *Order Management* process instance started with instance-id**
+1. Compile your project and run it. Observe the output in the console, which should say: **New *Order Management* process instance started with instance-id**
 
 ---------------
 
