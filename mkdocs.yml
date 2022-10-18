@@ -33,6 +33,7 @@ extra:
     version: "8.0"
     maven: "Red Hat Maven General Access Repository"
     gav: "7.67.0.Final-redhat-00008"
+    sandbox: "KIE Sandbox"
   generator: false
 
 theme:

@@ -16,7 +16,7 @@ _DMN is designed to work alongside BPMN and/or CMMN, providing a mechanism to mo
 
 In {{ product.name }} you can author decisions in multiple ways - all using the exact same editor in different environments:
 
-- KIE Sandbox found [and import your project here](https://sandbox.kie.org) or jump right into the editor at [DMN.new](https://dmn.new) for a light-weight browser experience experience
+- {{ product.sandbox }}found [and import your project here](https://sandbox.kie.org) or jump right into the editor at [DMN.new](https://dmn.new) for a light-weight browser experience experience
 - Business Central found in {{ product.short }}
 - [Business Automation VSCode Extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-extension-red-hat-business-automation-bundle)
   - A developer IDE ([Visual Studio Code](https://code.visualstudio.com/)) extension that allows the visualization and editing of BPMN, DMN and Test Scenarios inside VSCode.
