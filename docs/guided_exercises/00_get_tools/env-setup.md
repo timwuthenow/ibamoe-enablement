@@ -98,6 +98,50 @@ With {{ product.name }}, the components are built around a Maven architecture pr
 
 Follow the instructions at [the Maven Community](https://maven.apache.org/install.html) to download and update your path variables to incorporate it into your builds.
 
+##### Example Linux installation
+
+1. Download Maven 3.8.6 from [here](https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz)
+1. If using the Skytap image, change to the downloads folder.
+
+    ~~~bash
+    cd /home/pamadmin/Downloads
+    ~~~
+
+1. Now you need to extract the tar
+
+    ~~~bash
+    tar xzvf apache-maven-3.8.6-bin.tar.gz
+    ~~~
+
+1. Now if there's an existing Maven in your stack, you can move it out with this command.
+
+    ~~~bash
+    sudo mv /usr/share/maven /usr/share/maven-old
+    ~~~
+
+1. Now move the new download into your /usr/share with the following command.
+
+    ~~~bash
+    sudo mv apache-maven-3.8.6 /usr/share/maven
+    ~~~
+
+1. With this, Maven should be updated, validate with running a Maven version command.
+
+    ~~~bash
+    mvn -v
+    ~~~
+    
+    Your console should return a log similar to below
+
+    ~~~console
+    [pamadmin@host-1 maven]$ mvn -version
+    Apache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)
+    Maven home: /usr/share/maven
+    Java version: 11.0.16.1, vendor: Red Hat, Inc., runtime: /usr/lib/jvm/java-11-openjdk-11.0.16.1.1-1.el8_6.x86_64
+    Default locale: en_US, platform encoding: UTF-8
+    OS name: "linux", version: "4.18.0-372.26.1.el8_6.x86_64", arch: "amd64", family: "unix"
+    ~~~
+
 #### Mac Alternative
 
 The easiest way to acquire Maven is to use **homebrew** and run the command `brew install maven`, which at the time of writing will install Maven 3.8.6.
