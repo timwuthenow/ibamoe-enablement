@@ -26,6 +26,10 @@ In this setup we will:
 
 1. Save the process definition.
 
+1. On the breadcrumb, click on "cc-limit-approval-app-step1" to go back to the Project Explorer view.
+
+1. Click on the "Deploy" button.
+
 ## Configuring the business application
 
 1. In Business Central, navigate to the **Project Settings -> Deployments -> Work Item handlers**:
