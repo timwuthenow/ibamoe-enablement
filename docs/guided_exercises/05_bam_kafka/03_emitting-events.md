@@ -26,6 +26,10 @@ In this setup we will:
 
 1. Save the process definition.
 
+1. On the breadcrumb, click on "cc-limit-approval-app-step1" to go back to the Project Explorer view.
+
+1. Click on the "Deploy" button.
+
 ## Configuring the business application
 
 1. In Business Central, navigate to the **Project Settings -> Deployments -> Work Item handlers**:
@@ -62,7 +66,9 @@ To test the solution, we will start a new process instance that will start, be a
 
     You can use the following data in your event: `{"data" : {"customerId": 1, "customerScore": 250, "requestedValue":1500}}`
 
-1. Once you publish the event, a new process should get started.
+1. When you hit return, the data is published to the `incoming-requests` topic
+
+1. Kafka reads the event from the `incoming-requests` and automatically instantiates a new process is with this data.
 
 1. Now check the terminal where you are consuming the messages in the `requests-approved` topic. You should see a new event published by your process. The event will look like this (though not on multiple lines):
 
