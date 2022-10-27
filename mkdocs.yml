@@ -34,6 +34,9 @@ extra:
     maven: "Red Hat Maven General Access Repository"
     gav: "7.67.0.Final-redhat-00008"
     sandbox: "KIE Sandbox"
+  sandbox:
+    experimental: "https://kiegroup.github.io/kogito-online-staging/kie-sandbox-accelerators/#/"
+    production: "https://sandbox.kie.org"
   generator: false
 
 theme:

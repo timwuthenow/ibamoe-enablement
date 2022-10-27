@@ -268,6 +268,9 @@ In this section we will create a simple Java client for our DMN model.
         private static final String USERNAME = "bamAdmin";
     
         private static final String PASSWORD = "ibmpam1!";
+        // Comment out the above 2 lines if using the Skytap image and uncomment the two below to use those logins
+        // private static final String USERNAME = "pamadmin";
+        // private static final String PASSWORD = "pamadm1n";
     
         public static void main(String[] args) {
             CredentialsProvider credentialsProvider = new EnteredCredentialsProvider(USERNAME, PASSWORD);

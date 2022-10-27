@@ -42,25 +42,25 @@ In this section, you will import the GitHub repository to KIE Sandbox directly.
     https://raw.githubusercontent.com/timwuthenow/dmn-workshop-labs/master/policy-price/insurance-pricing.dmn
     ~~~
 
-1. With this link navigate to the [{{ product.sandbox }}](https://sandbox.kie.org) and under **Import </> From URL** paste the link from the previous step and click **Import**.
+2. With this link navigate to the [{{ product.sandbox }}]({{ sandbox.production }}) and under **Import </> From URL** paste the link from the previous step and click **Import**.
 
     ![Import DMN](../99_images/business_automation/dmn/import-dmn.png)
 
-1. When the project is imported, you will see the DMN Editor with the **insurance-pricing** DMN model displayed. If you instead of pointing to a particular DMN, pointed to an entire project, any DMN/BPMN models associated with it would be able to viewed/edited within {{ product.sandbox }}.
+3. When the project is imported, you will see the DMN Editor with the **insurance-pricing** DMN model displayed. If you instead of pointing to a particular DMN, pointed to an entire project, any DMN/BPMN models associated with it would be able to viewed/edited within {{ product.sandbox }}.
 
     ![Sandbox Model](../99_images/business_automation/dmn/imported-dmn.png)
 
-1. You can then click the **Run** button to get a local copy of this DMN running within the browser session itself.
+4. You can then click the **Run** button to get a local copy of this DMN running within the browser session itself.
 
     ![Run DMN](../99_images/business_automation/dmn/dmn-run.png)
 
-1. This will have a section of the browser turn into a form and you can run the model right there. Modifying the checkbox based on the boolean of `had previous incidents` and set an `Age` based on the data type being a number.
+5. This will have a section of the browser turn into a form and you can run the model right there. Modifying the checkbox based on the boolean of `had previous incidents` and set an `Age` based on the data type being a number.
 
     > 📘 INFO: There is a known issue around the DMN Runner with forms that does not initially assume a non-checked box is false on the first successful execution. To quickly get around this, check and uncheck the checkbox and move forward with your testing
 
     ![Form inputs](../99_images/business_automation/dmn/form-input-exec.png)
 
-1. If you link your OpenShift login to the gear icon, you can even do a sample deployment of this as a service into OpenShift. For now this will conclude this section.
+6. If you link your OpenShift login to the gear icon, you can even do a sample deployment of this as a service into OpenShift. For now this will conclude this section.
 
 ## Importing a DMN in Business Central
 

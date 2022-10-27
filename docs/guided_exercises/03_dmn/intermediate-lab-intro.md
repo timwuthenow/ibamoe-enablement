@@ -65,9 +65,11 @@ In this section we will link your GitHub account to the KIE Sandbox so we can ea
 
 ---------------
 
-### Create a DMN and Project in {{ product.sandbox }}
+### Create a DMN Model and Create a Project in {{ product.sandbox }}
 
-Now that our account is linked, let's go ahead and create a new DMN model and then later produce a project for it that will reside in our GitHub repositories. {{ product.sandbox }} provides an excellent way to both *push* and *pull* from your GitHub repositories. Right now, the {{ product.sandbox }} can just pull from public repositories. This is something that's being actively developed around, so keep checking back into [{{ product.sandbox }}'s Page](https://sandbox.kie.org).
+Now that our account is linked, let's go ahead and create a new DMN model and then later produce a project for it that will reside in our GitHub repositories. {{ product.sandbox }} provides an excellent way to both *push* and *pull* from your GitHub repositories. Right now, the {{ product.sandbox }} can just pull from public repositories. This is something that's being actively developed, so keep checking back into [{{ product.sandbox }}'s Page]({{ sandbox.production }}) for more recently released features frequently!
+
+1. When navigating from {{ product.experimental }}
 
 ## Create a Decision Project using Business Central (the Old Way)
 
