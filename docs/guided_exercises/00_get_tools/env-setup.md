@@ -7,13 +7,14 @@ In order to follow these guided labs, you should have {{ product.short }} 8.0+ i
 
 If you need to setup {{ product.short }} locally, you can use this repository to help you get up and running quickly: [{{ product.name }} Environment Setup](https://github.com/timwuthenow/ibamoe-setup). This will provide the files as two different forms, a locally built environment that will persist, or the option to have an ephemeral container that will lose the data stored between sessions. Both forms will provide a Business Central and KIE Server environment for use.
 
-## Maven and Java
+## Git, Maven and Java
 
-These labs are going to assume you are already running Maven 3.6.2+ and OpenJDK 11+. To get these added to your environment, you can follow the steps in this section.
+These labs are going to assume you are already running , a running version of git, Maven 3.6.2+ and OpenJDK 11+. To get these added to your environment, you can follow the steps in this section. {{ product.name }} is built around git source code control and Maven archetypes. You will need these tools to do most of the content in these quick walk throughs.
 
-### Java
+### Git
 
-The assumption in these exercises are that you will utilize a supported JDK. These were tested with `openjdk 11.0.11 2021-04-20`, but other ones are supported. You should be using at least Java 11 with {{ product.name }} to ensure your best experience with the tooling.
+Git is the open-source solution for source code management. To get git, go to [here](https://git-scm.com) to install it if you don't have it already. All of the major source code management systems work with the git command line and is ultimately platform-agnostic to those.
+
 ### Maven
 
 With {{ product.name }}, the components are built around a Maven architecture predominantly. What this ultimately means is your workstation needs to be able to communicate with one to many different Maven Repositories. These labs will use two in particular, the [Red Hat General Availability repository](https://maven.repository.redhat.com/ga/) and [Maven Central](https://repo1.maven.org/maven2/). You could easily replace the two repositories with a local environment one hosting the Maven dependencies as a mirror or based in a disconnected installation, but this is the easiest developer workflow for acquiring new dependencies. The reason we are pointing to the Red Hat Maven repository, at least in the short term, is that the builds for {{ product.name }} are being deployed there as they are the same binaries used within both the IBM and Red Hat products during the transition of Red Hat Process Automation Manager (RHPAM)/Red Hat Decision Manager (RHDM) from Red Hat into IBM Automation under the name of {{ product.name }} ( {{ product.short }}). The settings.xml file included below will use the local Maven repository at your **USER_HOME**/.m2/repository, which when configuring Maven would be the default M2_HOME that's created.
@@ -145,6 +146,12 @@ Follow the instructions at [the Maven Community](https://maven.apache.org/instal
 #### Mac Alternative
 
 The easiest way to acquire Maven is to use **homebrew** and run the command `brew install maven`, which at the time of writing will install Maven 3.8.6.
+
+
+### Java
+
+The assumption in these exercises are that you will utilize a supported JDK. These were tested with `openjdk 11.0.11 2021-04-20`, but other ones are supported. You should be using at least Java 11 with {{ product.name }} to ensure your best experience with the tooling.
+
 
 ## Kafka
 
