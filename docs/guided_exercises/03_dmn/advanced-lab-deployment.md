@@ -32,7 +32,7 @@ The Swagger interface provides the description and documentation of the Executio
 
 1. Click on the **Try it out** button.
 
-1. Set the **containerId** field to `call-centre-decision` and set the **Response content type** to `application/json` and click on **Execute** ![DMN Swagger Get](../99_images/business_automation/dmn/dmn-swagger-get.png){:width="800px"}
+1. Set the **containerId** field to `call-centre-decisions` and set the **Response content type** to `application/json` and click on **Execute** ![DMN Swagger Get](../99_images/business_automation/dmn/dmn-swagger-get.png){:width="800px"}
 
 1. If requested, provide the username and password of your **Business Central** and **KIE-Server** user.
 
