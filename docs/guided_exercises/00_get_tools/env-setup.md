@@ -7,6 +7,9 @@ In order to follow these guided labs, you should have {{ product.short }} 8.0+ i
 
 If you need to setup {{ product.short }} locally, you can use this repository to help you get up and running quickly: [{{ product.name }} Environment Setup](https://github.com/timwuthenow/ibamoe-setup). This will provide the files as two different forms, a locally built environment that will persist, or the option to have an ephemeral container that will lose the data stored between sessions. Both forms will provide a Business Central and KIE Server environment for use.
 
+## VS Code
+
+For running through the
 ## Git, Maven and Java
 
 These labs are going to assume you are already running , a running version of git, Maven 3.6.2+ and OpenJDK 11+. To get these added to your environment, you can follow the steps in this section. {{ product.name }} is built around git source code control and Maven archetypes. You will need these tools to do most of the content in these quick walk throughs.
@@ -204,9 +207,9 @@ In the upcoming labs we will need three topics: `incoming-requests`,`requests-ap
 1. Create the following three topics:
  
     ~~~shell
-    docker-compose exec kafka bin/kafk a-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic incoming-requests
+    docker-compose exec kafka bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic incoming-requests
  
-    docker-compose exec kafka bin/kafk a-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic requests-approved
+    docker-compose exec kafka bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic requests-approved
  
     docker-compose exec kafka bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic requests-denied
     ~~~

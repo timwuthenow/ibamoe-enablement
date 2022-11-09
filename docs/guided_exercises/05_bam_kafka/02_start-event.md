@@ -75,7 +75,7 @@ Let's publish a new event in the `incoming-requests` topic using the Kafka produ
 3. You can send the following data, and press enter:
 
     ~~~json
-    {"data" : {"customerId": 1, "customerScore": 250, "requestedValue":1500}}
+    {"customerId": 1, "customerScore": 250, "requestedValue":1500}
     ~~~
   
     ![Terminal sending event](../99_images/business_automation/bam_kafka/terminal-send-event.png){:width="800px"}

@@ -31,10 +31,10 @@ In this example we will check the behavior for our event driven business applica
 1. Start a new process by emitting an event. Let's start a process that will not be automatically approved. In this way, we will also have a human task created. You can emit the following event to the `incoming-requests` topic:
 
     ~~~json
-    {"data" : {"customerId": 1, "customerScore":100, "requestedValue": 1200}}
+    {"customerId": 1, "customerScore":100, "requestedValue": 1200}
     ~~~
 
-1. You should be able to see a new process instance can be seen in Business Central in the following status:
+2. You should be able to see a new process instance can be seen in Business Central in the following status:
 
  ![Active Human Task in Process](../99_images/business_automation/bam_kafka/active-human-task-process.png){:width="600px"}
 
