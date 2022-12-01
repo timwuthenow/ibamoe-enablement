@@ -9,7 +9,8 @@ If you need to setup {{ product.short }} locally, you can use this repository to
 
 ## VS Code
 
-For running through the
+For running through the exercises, it is highly recommended that you get **Visual Studio Code** as this is the IDE that {{ product.name }} most supports for activities regarding both decisions and processes. To get Visual Studio Code go to [the Visual Studio Code download page](https://code.visualstudio.com/download) and download for your platform.
+
 ## Git, Maven and Java
 
 These labs are going to assume you are already running , a running version of git, Maven 3.6.2+ and OpenJDK 11+. To get these added to your environment, you can follow the steps in this section. {{ product.name }} is built around git source code control and Maven archetypes. You will need these tools to do most of the content in these quick walk throughs.
