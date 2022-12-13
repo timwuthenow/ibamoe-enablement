@@ -10,13 +10,12 @@ The problem statement describes a number of different inputs to our decision:
 
 Furthermore, the problem statement describes that phone numbers could be banned. So, also **banned numbers** can be regarded as an input to our model (although we will not implement it as an input in this lab).
 
-With the given input, we need to make the following decisions: 
+With the given input, we need to make the following decisions:
 
 - **Accept Call**: the final decision we need to make is whether the given office will accept the call.
 - **Can Handle Call**: whether the office can actually accept the call. As defined in the problem statement, this depends on:
   - whether the phone number has been banned;
   - the purpose of the phone call (“help” or “objection”).
-
 
 ## . Accept Call Decision Structure
 
