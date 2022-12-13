@@ -6,7 +6,7 @@ Access the labs currently at: https://timwuthenow.github.io will be coming to IB
 
 ## Contributing to this project
 
-The training labs are based on mkdocs.
+The training labs are displayed using mkdocs so they can be easily published to GitHub pages.
 
 Environment setup to deploy locally:
 
