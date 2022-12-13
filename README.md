@@ -8,7 +8,7 @@ Access the labs currently at: https://timwuthenow.github.io will be coming to IB
 
 The training labs are based on mkdocs.
 
-Env setup:
+Environment setup to deploy locally:
 
 ~~~bin/bash
   pip install mkdocs
