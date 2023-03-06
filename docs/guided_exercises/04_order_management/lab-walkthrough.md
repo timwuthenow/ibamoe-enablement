@@ -433,8 +433,8 @@ In this section we will complete the writing of the DMN decision.
 1. With our DMN model implemented, we can now revisit our **Business Rules Task** in our BPMN2 model. Open the `order-management` process definition and click on the`Auto Approval Order` node.
    1. Open the node’s properties in the property-panel on the right side of the editor, open the
        **Implementation/Execution** section and set:
-       - Namespace: `http://www.redhat.com/dmn/lab/order-approval-dmn`
-       - Name:`order-approval`
+       - Namespace: `http://www.redhat.com/dmn/demo/order-management-dmn`
+       - DMN Model Name: `order-approval`
    1. In the same properties panel, expand the *Data Assignments* section and open the *Assignments* editor
    1. Implement the following data input and output assignments.
 
